@@ -1,0 +1,51 @@
+.slider {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%; height: 15px;
+    border-radius: 7px;
+    background: #d3d3d3;
+    outline: none;
+    transition: .2s;
+    -webkit-transition: .2s;
+    opacity: .7;
+    margin: 0 auto;
+    margin-top: 50px; margin-bottom: 90px;
+    display: block;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+}
+
+.slider::after {
+    content: "Aggression";
+    position: absolute;
+    top: 15px;
+    right: 0;
+    color: pink;
+    font-weight: 900;
+}
+
+.slider::before {
+    content: "Cooperative";
+    position: absolute;
+    top: 15px;
+    color: lightblue;
+}

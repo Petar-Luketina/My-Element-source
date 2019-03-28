@@ -1,0 +1,96 @@
+#bigFirePic::after, #bigWaterPic::after, #bigWindPic::after, #bigEarthPic::after {
+  font-size: 10vh;
+  text-align: center;
+  color: #F6F5F3;
+  position: absolute;
+  top: 38.5vh;
+  text-align: center;
+  width: 100%; }
+
+#bigFirePic::before, #bigWaterPic::before, #bigWindPic::before, #bigEarthPic::before {
+  content: '';
+  position: absolute;
+  background: rgba(1, 1, 1, 0.5);
+  height: 16vh;
+  width: 100%;
+  top: 38vh; }
+
+#bigFirePic {
+  background: url("../pics/fire.jpg") top center no-repeat; }
+
+#bigFirePic::after {
+  content: 'Fire'; }
+
+#bigWaterPic {
+  background: url("../pics/water.jpg") center center no-repeat; }
+
+#bigWaterPic::after {
+  content: 'Water'; }
+
+#bigWindPic {
+  background: url("../pics/wind.jpg") center center no-repeat; }
+
+#bigWindPic::after {
+  content: 'Wind'; }
+
+#bigEarthPic {
+  background: url("../pics/earth.jpg") center center no-repeat; }
+
+#bigEarthPic::after {
+  content: 'Earth'; }
+
+#bigFirePic, #bigWaterPic, #bigWindPic, #bigEarthPic {
+  height: 95vh;
+  background-size: cover; }
+
+#dna {
+  background: url("../pics/dna1.jpg") center center no-repeat;
+  background-size: cover;
+  top: 19px;
+  width: 100%;
+  height: 98vh;
+  position: fixed;
+  -webkit-transition: 1.4s ease-in-out;
+  transition: 1.4s ease-in-out; }
+
+#dna:hover {
+  -webkit-filter: blur(3px);
+  filter: blur(3px); }
+
+.writingBlock {
+  opacity: 1;
+  margin: 50px auto;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  min-height: 50vh;
+  max-height: auto;
+  padding: 75px;
+  max-width: 1000px;
+  text-align: justify;
+  line-height: 45px;
+  position: relative;
+  top: -150px;
+  color: black;
+  font-size: 28px;
+  box-shadow: 0px -8px 25px rgba(0, 0, 0, 0.5);
+  transition: 3s; }
+  .writingBlock a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+.center {
+  text-align: center; }
+
+@media (max-width: 1222px) {
+  .writingBlock {
+    padding: 50px 45px;
+    margin: 50px 65px;
+    font-size: 20px; } }
+@media (max-width: 767px) {
+  .writingBlock {
+    padding: 50px 24px;
+    margin: 50px 30px;
+    font-size: 14px; } }
+
+/*# sourceMappingURL=formatting3.css.map */

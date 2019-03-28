@@ -1,0 +1,18 @@
+{% extends 'base2.html' %}
+
+<title>{% block title %}The Elements{% endblock %}</title>
+
+{% block body %}
+
+    <style>
+        #elements .overlay-a {
+            width: 90%;
+            background: pink;
+        }
+
+        #elements:hover .overlay-a {
+            width:0;
+        }
+    </style>
+
+{% endblock %}

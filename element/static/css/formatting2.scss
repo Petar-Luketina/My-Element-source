@@ -1,0 +1,339 @@
+@import 'formatting-hamburger';
+@import 'formatting-slider';
+
+$breakpoint-md: 991px;
+$breakpoint-lg:1199px;
+$breakpoint-sm:768px;
+$width: 100%;
+$height: 330px;
+$bg: #0A0A0A;
+
+* {
+    transition: .2s;
+}
+
+body {
+    margin: 0px;
+    background-color: $bg;
+    font-size: 25px;
+    font-family: roboto;
+}
+
+#navbar {
+    background: #141414;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 10px;
+}
+
+#navbar > span {
+    position: relative;
+}
+
+.extra-margin {
+    margin: 30px;
+}
+
+
+#elements:hover #triangle {
+    transform: rotate(180deg);
+    top: 35px;
+}
+
+
+.container-dropdown-elements-menu:hover, #elements:hover ~ .container-dropdown-elements-menu {
+    display: block;
+    animation: dropdown-animation .3s;
+}
+
+
+#triangle {
+    transition: .5s ease-in-out;
+    position:absolute;
+    z-index:4;
+    top: 29px;
+    left: 150px;
+}
+
+.container-dropdown-elements-menu {
+    opacity: 1;
+    display: none;
+    position: absolute;
+    height: 250px;
+    width: 160px;
+    top: 60px;
+    left: 85px;
+
+    & .dropdown-elements-menu {
+        width: 100%;
+        position: absolute;
+        background: #141414;
+        color: white;
+        z-index: 3;
+    }
+}
+
+.dropdown-elements-menu{
+    ul {
+        margin: 4px 0px;
+        padding: 0px;
+        text-align: left;
+
+        & li {
+            list-style-type: none;
+            position: relative;
+            padding: 10px 5px;
+
+            & .overlay-elements {
+                background: #71cdf2;
+                height: 0;
+                width: 4px;
+                position: absolute;
+                left: 0;
+                top: 25px;
+                transition: .5s ease-in-out;
+            }
+
+            & a {
+                padding: 5px 20px;
+                color: white;
+                text-decoration: none;
+                letter-spacing: 4px;
+                width: 100%;
+                height: 100%;
+            }
+
+            & a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+            & a:hover ~ .overlay-elements {
+                height: 100%;
+                top: 0;
+            }
+        }
+    }
+}
+
+
+.container {
+    position: relative;
+    background: black;
+    padding: 10px;
+    width: 100%;
+    z-index: 1;
+    margin:30px 30px;
+    padding: 0px;
+}
+
+
+.centered {
+    padding: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    letter-spacing: 15px;
+    text-shadow: 2px 2px 3px black;
+    color: white;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 35%;
+    background-color: black;
+    overflow: hidden;
+    width: 0;
+    height: 30%;
+    opacity: .5;
+    -moz-transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    padding: 0;
+}
+
+.changed-a {
+    position: relative;
+}
+
+.changed-a > a {
+    color: white;
+    padding: 30px 10px;
+    text-decoration: none;
+}
+
+
+.changed-b::hover {
+    color: gray;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
+.overlay-a {
+    position: absolute;
+    bottom: -17px;
+    left: 10px;
+    padding: 0;
+    height: 3px;
+    background-color: #71cdf2;
+    width: 0;
+    -moz-transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+#elements:hover {
+    .overlay-a {
+        width:73%;
+    }
+}
+
+.changed-a:hover .overlay-a {
+    width:90%;
+}
+
+
+.changed-b:hover .overlay-a {
+    -moz-transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    width:60%;
+}
+
+#firePic {
+    background: url('../pics/fire.jpg') top center no-repeat;
+    @extend %zoom;
+}
+
+#waterPic {
+    background: url('../pics/water.jpg') center center no-repeat;
+    @extend %zoom;
+}
+#windPic {
+    background: url('../pics/wind.jpg') center center no-repeat;
+    @extend %zoom;
+}
+#earthPic {
+    background: url('../pics/earth.jpg') bottom center no-repeat;
+    @extend %zoom;
+}
+
+%zoom {
+    border-radius: 3px;
+    height: 100%;
+    background-size: cover;
+    -moz-transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.outer {
+    height: $height;
+    overflow: hidden;
+}
+
+.container:hover {
+    .overlay{
+        width: 100%;
+    }
+
+    %zoom {
+        transform: scale(1.05);
+    }
+}
+
+.row {
+    padding: 0px;
+    margin: 0px;
+}
+
+@media (max-width: $breakpoint-md) {
+
+    .container {
+        margin:10px 20px;
+    }
+
+    .extra-margin {
+        margin: 10px;
+    }
+
+    .changed-a:hover .overlay-a .changed-b:hover .overlay-a {
+        width:0;
+    }
+
+    .container:hover {
+
+        .overlay{
+            width: 0;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .outer {
+        height: 260px;
+    }
+
+    #science, #elements, #elements-dropdown, overlay-a  {
+        display: none;
+    }
+
+    #icon {
+        left: calc(50% - 30px);
+    }
+
+    #hidden-nav{
+        display: block;
+    }
+}
+
+
+@keyframes dropdown-animation {
+    0% {
+        opacity: 0;
+        top: 5;
+    }
+    100% {
+        opacity: 1;
+        top: 60px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade {
+    opacity: 1;
+    animation: fadeIn .75s;
+}
+
+disappear {
+    display: none;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#down-arrow {
+    cursor: pointer;
+    position: relative;
+    bottom: -5px; left: calc(50% - 10px);
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: lighten(gray,34%);
+
+}
+
+#down-arrow:hover {
+    background: lighten(gray, 24%);
+}

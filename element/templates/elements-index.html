@@ -1,0 +1,70 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+    My Element
+{% endblock %}
+
+{% block body %}
+
+<style>
+
+    #icon .overlay-a {
+        width: 60%;
+        background: pink;
+    }
+
+    #icon:hover .overlay-a {
+        width:0;
+    }
+
+    @media (max-width: 768px) {
+        .overlay-a {
+            display:none;
+        }
+    }
+
+    ul:nth-child(1) > a {
+        color: white;
+    }
+
+</style>
+    <div class="row justify-content-center fade" style="margin-top: 80px;">
+
+        <div class="outer col-xl-5 container">
+            <a href="{% url 'fire' %}">
+                <div id="firePic">
+                <div class="overlay"></div>
+                    <div class="centered">Fire</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="outer col-lg-5 container">
+            <a href="{% url 'wind' %}">
+                <div id="windPic">
+                <div class="overlay"></div>
+                    <div class="centered">Wind</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="outer col-lg-5 container">
+            <a href="{% url 'earth' %}">
+                <div id="earthPic">
+                <div class="overlay"></div>
+                    <div class="centered">Earth</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="outer col-xl-5 container">
+            <a href="{% url 'water' %}">
+                <div id="waterPic">
+                <div class="overlay"></div>
+                    <div class="centered">Water</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="extra-margin"></div>
+{% endblock %}
