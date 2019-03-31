@@ -61,6 +61,7 @@
     width: 100%;
     height: 98vh;
     position: fixed;
+    -moz-transition: 1.4s ease-in-out;
 	-webkit-transition: 1.4s ease-in-out;
 	transition: 1.4s ease-in-out;
 }
@@ -85,6 +86,8 @@
     color: black;
     font-size: 28px;
     box-shadow: 0px -8px 25px rgba(0,0,0,.5);
+    -moz-transition: .3s ;
+    -webkit-transition: .3s ;
     transition: 3s;
 
     & a {

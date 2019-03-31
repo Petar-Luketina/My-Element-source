@@ -1,0 +1,197 @@
+#bar-main-container {
+
+    & #bar-header {
+        opacity: 1;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        padding: 0 20px;
+        animation-name: fadeInTransition;
+        animation-duration: 3.5s;
+    }
+
+    & .bar-container {
+        margin: 0 auto;
+        background: lighten(#141414,3%);
+        height: 430px; width: 80%;
+        position: relative;
+
+        & .bar {
+            position: absolute;
+            bottom: 0;
+            width: calc((100% / 12) * 1.5);
+            display: inline-block;
+            border-radius: 10px 10px 0 0;
+            -moz-transition: 1s ease-in-out;
+            -webkit-transition: 1s ease-in-out;
+            transition: 1s ease-in-out;
+            height: 0;
+        }
+
+        & .bar:nth-child(1) {
+            left: 10vw;
+            transition-delay: .25s;
+            background: red;
+            }
+
+        & .bar:nth-child(2) {
+            left: 27vw;
+            transition-delay: .5s;
+            background: green;
+        }
+        & .bar:nth-child(3) {
+            left: 44vw;
+            transition-delay: .75s;
+            background: yellow;
+        }
+        & .bar:nth-child(4) {
+            left: 61vw;
+            transition-delay: 1s;
+            background: blue;
+        }
+
+        & .bar-percent {
+            font-size: 22px;
+            opacity: 0;
+            position: absolute;
+            bottom: 0;
+            display: inline-block;
+            -moz-transition: 1s ease-in-out;
+            -webkit-transition: 1s ease-in-out;
+            transition: 1s ease-in-out;
+            color: white;
+            margin: 33px 0;
+        }
+
+
+        & #barOne {
+            left: 10vw;
+            transition-delay: 1s;
+        }
+        & #barTwo {
+            left: 27vw;
+            transition-delay: 1.25s;
+        }
+        & #barThree {
+            left: 44vw;
+            transition-delay: 1.5s;
+        }
+        & #barFour {
+            left: 61vw;
+            transition-delay: 1.75s;
+            }
+
+        & ul {
+            position: absolute;
+            bottom: 0;
+
+            & li {
+                font-size: 22px;
+                padding: 30px 0;
+                position: absolute;
+                display: inline-block;
+                -moz-transition: 1s ease-in-out;
+                -webkit-transition: 1s ease-in-out;
+                transition: 1s ease-in-out;
+            }
+        }
+
+        & li:nth-child(1) {
+            left: 10vw;
+            transition-delay: 1s;
+        }
+        & li:nth-child(2) {
+            left: 27vw;
+            transition-delay: 1.25s;
+        }
+        & li:nth-child(3) {
+            transition-delay: 1.5s;
+            left: 44vw;
+        }
+        & li:nth-child(4) {
+            transition-delay: 1.75s;
+            left: 61vw;
+        }
+
+        @media (min-width: 1000px) {
+            .bar-container {
+                width: 60%;
+            }
+
+            .bar {
+                width: calc(100% / 12);
+            }
+        }
+
+        @media (max-width: 700px) {
+            li {
+                transform: rotate(-45deg);
+                margin-left: -20px;
+                }
+            li:nth-child(1){
+                padding: 23px 0;
+                margin-left: -05px;
+            }
+        }
+
+
+        @keyframes fadeInTransition {
+            0% {
+                opacity: 0;
+            }
+            70% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+
+    & .row {
+        animation-name: fadeInTransition;
+        animation-duration: 3.5s;
+    }
+
+    & .col-sm-5 {
+        margin: 0 auto;
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    & table {
+        border-collapse: collapse;
+        color: white;
+    }
+
+    & table, th, td {
+        border: 3px solid #141414 ;
+        padding: 13px 40px;
+    }
+
+    & th:nth-child(1) {
+        text-align: right;
+    }
+
+    & td:nth-child(odd) {
+        text-align: right;
+    }
+
+    & #firebase {
+        margin: auto auto;
+        margin-bottom: 18px;
+        height: 100px;
+        width: 100px;
+        background: url() center center no-repeat;
+        object-fit: scale-down;
+    }
+
+    @media (min-width: 768px) {
+        #firebase {
+            margin-top: 120px;
+        }
+    }
+
+}

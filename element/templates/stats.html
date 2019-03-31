@@ -1,0 +1,102 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{% block title %}
+    Stats
+{% endblock %}
+
+{% block body %}
+    <style>
+
+        #stats .overlay-a {
+            width:80%;
+            background: pink;
+        }
+
+        #stats:hover .overlay-a {
+            width:0;
+        }
+        ul:nth-child(3) > a {
+            color: white;
+        }
+
+        h1 {
+            color: white;
+            padding: 40px;
+        }
+    </style>
+
+    <>
+        <div id="bar-main-container">
+            <div id="bar-header">
+                Global Results from the Android App
+            </div>
+
+                <div class="bar-container">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div id="barOne" class="bar-percent">{{ FirePercent }}%</div>
+                    <div id="barTwo" class="bar-percent">{{ EarthPercent }}%</div>
+                    <div id="barThree" class="bar-percent">{{ WindPercent }}%</div>
+                    <div id="barFour" class="bar-percent">{{ WaterPercent }}%</div>
+
+                        <ul>
+                            <li>Fire</li>
+                            <li>Earth</li>
+                            <li>Wind</li>
+                            <li>Water</li>
+                        </ul>
+                </div>
+            <div class="container">
+                <div class="row">
+                    <table class="col-sm-5">
+                        <tr>
+                            <th>Element</th>
+                            <th>Users</th>
+                        </tr>
+                        <tr>
+                            <td>Fire</td>
+                            <td>{{ Fire }}</td>
+                        </tr>
+                        <tr>
+                            <td>Earth</td>
+                            <td>{{ Earth }}</td>
+                        </tr>
+                        <tr>
+                            <td>Wind</td>
+                            <td>{{ Wind }}</td>
+                        </tr>
+                        <tr>
+                            <td>Water</td>
+                            <td>{{ Water }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Total</td>
+                            <td>{{ Total }}</td>
+                        </tr>
+                    </table>
+
+                    <div class="col-sm-5">
+                        <img src="../static/pics/firebase.png" id="firebase">
+                        <div>Powered by Firebase</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin: 30px;"></div>
+    </body>
+<script>
+    $('.bar-percent').css('opacity', '1');
+    $('.bar:nth-child(1)').css('height', 'calc({{ FirePercent }}% * 2.2)');
+    $('#barOne').css('height', 'calc({{ FirePercent }}% * 2.2)');
+    $('.bar:nth-child(2)').css('height', 'calc({{ EarthPercent }}% * 2.2)');
+    $('#barTwo').css('height', 'calc({{ EarthPercent }}% * 2.2)');
+    $('.bar:nth-child(3)').css('height', 'calc({{ WindPercent }}% * 2.2)');
+    $('#barThree').css('height', 'calc({{ WindPercent }}% * 2.2)');
+    $('.bar:nth-child(4)').css('height', 'calc({{ WaterPercent }}% * 2.2)');
+    $('#barFour').css('height', 'calc({{ WaterPercent }}% * 2.2)');
+</script>
+{% endblock %}

@@ -1,5 +1,6 @@
 @import 'formatting-hamburger';
 @import 'formatting-slider';
+@import 'bar-chart';
 
 $breakpoint-md: 991px;
 $breakpoint-lg:1199px;
@@ -9,7 +10,9 @@ $height: 330px;
 $bg: #0A0A0A;
 
 * {
-    transition: .2s;
+    -moz-transition: .2s ;
+    -webkit-transition: .2s ;
+    transition: .2s ;
 }
 
 body {
@@ -50,11 +53,13 @@ body {
 
 
 #triangle {
+    -moz-transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     position:absolute;
     z-index:4;
     top: 29px;
-    left: 150px;
+    left: 113px;
 }
 
 .container-dropdown-elements-menu {
@@ -62,7 +67,7 @@ body {
     display: none;
     position: absolute;
     height: 250px;
-    width: 160px;
+    width: 140px;
     top: 60px;
     left: 85px;
 
@@ -93,7 +98,9 @@ body {
                 position: absolute;
                 left: 0;
                 top: 25px;
-                transition: .5s ease-in-out;
+                -moz-transition: .5s ;
+                -webkit-transition: .5s ;
+                transition: .5s ;
             }
 
             & a {
@@ -111,15 +118,15 @@ body {
             }
 
             & a:hover ~ .overlay-elements {
-                height: 100%;
-                top: 0;
+                height: 80%;
+                top: 5px;
             }
         }
     }
 }
 
 
-.container {
+.picture-container {
     position: relative;
     background: black;
     padding: 10px;
@@ -189,12 +196,12 @@ body {
 
 #elements:hover {
     .overlay-a {
-        width:73%;
+        width:63%;
     }
 }
 
 .changed-a:hover .overlay-a {
-    width:90%;
+    width:80%;
 }
 
 
@@ -203,6 +210,11 @@ body {
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
     width:60%;
+}
+
+#mistPic {
+    background: url('../pics/mist.jpeg') bottom center no-repeat;
+    @extend %zoom;
 }
 
 #firePic {
@@ -237,7 +249,7 @@ body {
     overflow: hidden;
 }
 
-.container:hover {
+.picture-container:hover {
     .overlay{
         width: 100%;
     }
@@ -250,11 +262,12 @@ body {
 .row {
     padding: 0px;
     margin: 0px;
+    position: relative;
 }
 
 @media (max-width: $breakpoint-md) {
 
-    .container {
+    .picture-container {
         margin:10px 20px;
     }
 
@@ -266,7 +279,7 @@ body {
         width:0;
     }
 
-    .container:hover {
+    .picture-container:hover {
 
         .overlay{
             width: 0;
@@ -279,7 +292,7 @@ body {
         height: 260px;
     }
 
-    #science, #elements, #elements-dropdown, overlay-a  {
+    #science, #elements, #elements-dropdown, #stats, overlay-a  {
         display: none;
     }
 
@@ -336,4 +349,16 @@ disappear {
 
 #down-arrow:hover {
     background: lighten(gray, 24%);
+}
+
+#comingSoon {
+    z-index:5;
+    position: absolute;
+    left: 50%;
+    margin-left: -110px;
+    color: white;
+    font-size: 28px;
+    padding: 4px 10px;
+    cursor: default;
+    text-shadow: 1px 1px 2px black;
 }

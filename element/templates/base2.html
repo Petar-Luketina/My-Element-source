@@ -31,9 +31,12 @@
                 <a href='{% url "elements-index" %}'>Home</a>
             </ul>
             <ul class="disappear">
-                <a href='{% url "science" %}'>The Science</a>
+                <a href='{% url "science" %}'>Science</a>
             </ul>
-            <ul class="disappear">                The Elements:   </ul>
+            <ul class="disappear">
+                <a href='{% url "stats" %}'>Results</a>
+            </ul>
+            <ul class="disappear">Elements:</ul>
             <ul class="disappear">
                 <li><a href='{% url "fire" %}'>Fire </a></li>
                 <li><a href='{% url "earth" %}'>Earth</a></li>
@@ -55,7 +58,7 @@
         </span>
 
         <span id="elements" class="changed-a">
-            <a href="javascript:;">The Elements</a>
+            <a href="javascript:;">Elements</a>
             <span class="overlay-a"></span>
 
             <svg height="10px" width="10px" id="triangle">
@@ -64,11 +67,14 @@
         </span>
 
         <span id="science" class="changed-a">
-            <a href="{% url 'science' %}">The Science</a>
+            <a href="{% url 'science' %}">Science</a>
             <span class="overlay-a"></span>
         </span>
 
-        <!-- FIX THIS ... NOT SHOWING IF HAMBURGER MENU IS DOWN -->
+        <span id="stats" class="changed-a">
+            <a href="{% url 'stats' %}">Results</a>
+            <span class="overlay-a"></span>
+        </span>
 
         <div id="elements-dropdown" class="container-dropdown-elements-menu">
             <div class="dropdown-elements-menu">
