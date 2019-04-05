@@ -1,0 +1,18 @@
+question_list = {
+    '1st Question': 'I am the first one to apologize after a verbal fight.',
+    '2nd Question': 'I tend to worry a lot throughout my day.',
+    '3rd Question': 'I often find myself in arguments.',
+    '4th Question': 'I think first, then act.',
+    '5th Question': 'The world treats me fairly.',
+    '6th Question': 'I get too excited about the littlest things.',
+    '7th Question': 'I think of myself as much better than everyone else.',
+    '8th Question': 'In a stressful situations, I am very calm.',
+    '9th Question': 'I tend to go with the flow of the crowd.',
+    '10th Question': 'My emotions are very intense.',
+    '11th Question': 'I would do anything to win.',
+    '12th Question': 'I consider myself to be emotionally stable.',
+    '13th Question': 'I watch what I say so I don\'t hurt people\'s feelings.',
+    '14th Question': 'I become sad or angry very easily.',
+    '15th Question': 'I prefer being right than being liked by others.',
+    '16th Question': 'I rarely feel anxious throughout my day.',
+}

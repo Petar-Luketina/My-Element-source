@@ -22,8 +22,11 @@
 
     <title>{% block title %}{% endblock %}</title>
 
+    {% block style %} {% endblock %}
+
 </head>
-<body>
+<body id="code">
+
     <div id="navbar">
 
         <div id='hidden-nav' class='move1'>
@@ -31,10 +34,13 @@
                 <a href='{% url "elements-index" %}'>Home</a>
             </ul>
             <ul class="disappear">
-                <a href='{% url "science" %}'>Science</a>
+                <a href='{% url "quiz" %}'>Quiz</a>
             </ul>
             <ul class="disappear">
                 <a href='{% url "stats" %}'>Results</a>
+            </ul>
+            <ul class="disappear">
+                <a href='{% url "science" %}'>Science</a>
             </ul>
             <ul class="disappear">Elements:</ul>
             <ul class="disappear">
@@ -57,13 +63,14 @@
             <span class="overlay-a"></span>
         </span>
 
-        <span id="elements" class="changed-a">
-            <a href="javascript:;">Elements</a>
+        <span id="quiz" class="changed-a">
+            <a href="{% url 'quiz' %}">Quiz</a>
             <span class="overlay-a"></span>
+        </span>
 
-            <svg height="10px" width="10px" id="triangle">
-                <polygon points="0,0 5,2 10,0 5,10" stroke="white" fill="white"></polygon>
-            </svg>
+        <span id="stats" class="changed-a">
+            <a href="{% url 'stats' %}">Results</a>
+            <span class="overlay-a"></span>
         </span>
 
         <span id="science" class="changed-a">
@@ -71,9 +78,13 @@
             <span class="overlay-a"></span>
         </span>
 
-        <span id="stats" class="changed-a">
-            <a href="{% url 'stats' %}">Results</a>
+        <span id="elements" class="changed-a">
+            <a href="javascript:;" style="cursor: default;">Elements</a>
             <span class="overlay-a"></span>
+
+            <svg height="10px" width="10px" id="triangle">
+                <polygon points="0,0 5,2 10,0 5,10" stroke="white" fill="white"></polygon>
+            </svg>
         </span>
 
         <div id="elements-dropdown" class="container-dropdown-elements-menu">
@@ -107,4 +118,5 @@
 
 </body>
 <script src = '{% static "java/java1.js" %}'></script>
+{% block script %} {% endblock %}
 </html>

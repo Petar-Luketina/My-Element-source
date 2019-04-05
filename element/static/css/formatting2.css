@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Signika+Negative");
 a, a:link, a:visited, a:hover {
   text-decoration: none; }
 
@@ -38,7 +38,7 @@ a, a:link, a:visited, a:hover {
   #hidden-nav .hamburger-lines:nth-of-type(2) {
     top: 13px; }
   #hidden-nav .hamburger-lines-toggle-two {
-    background: black; }
+    background: #141414; }
   #hidden-nav .hamburger-lines-toggle-three {
     transform: rotate(-45deg);
     margin-top: 4px; }
@@ -56,9 +56,12 @@ a, a:link, a:visited, a:hover {
 .move2 {
   top: 0px;
   left: 0;
-  height: 400px;
+  height: 440px;
   width: 200px;
-  padding-top: 30px; }
+  padding-top: 30px;
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  z-index: 4; }
   .move2 ul, .move2 li, .move2 a {
     color: gray; }
   .move2 a:hover {
@@ -136,6 +139,7 @@ ul {
   top: 15px;
   right: 0;
   color: pink;
+  letter-spacing: 2px;
   font-weight: 900; }
 
 .slider::before {
@@ -146,7 +150,7 @@ ul {
 
 #bar-main-container #bar-header {
   opacity: 1;
-  margin-top: 50px;
+  margin-top: 90px;
   margin-bottom: 20px;
   text-align: center;
   color: white;
@@ -156,10 +160,11 @@ ul {
   animation-duration: 3.5s; }
 #bar-main-container .bar-container {
   margin: 0 auto;
-  background: #1c1c1c;
+  background: rgba(30, 30, 30, 0.5);
   height: 430px;
   width: 80%;
-  position: relative; }
+  position: relative;
+  border-radius: 5px; }
   #bar-main-container .bar-container .bar {
     position: absolute;
     bottom: 0;
@@ -169,7 +174,9 @@ ul {
     -moz-transition: 1s ease-in-out;
     -webkit-transition: 1s ease-in-out;
     transition: 1s ease-in-out;
-    height: 0; }
+    height: 0;
+    border-right: rgba(0, 0, 0, 0.2) solid 3px;
+    border-radius: 5px 5px 0 0; }
   #bar-main-container .bar-container .bar:nth-child(1) {
     left: 10vw;
     transition-delay: .25s;
@@ -264,10 +271,14 @@ ul {
 #bar-main-container table, #bar-main-container th, #bar-main-container td {
   border: 3px solid #141414;
   padding: 13px 40px; }
+#bar-main-container th {
+  letter-spacing: 3px; }
 #bar-main-container th:nth-child(1) {
   text-align: right; }
 #bar-main-container td:nth-child(odd) {
   text-align: right; }
+#bar-main-container tr:nth-child(6) {
+  background: rgba(148, 152, 158, 0.1); }
 #bar-main-container #firebase {
   margin: auto auto;
   margin-bottom: 18px;
@@ -279,6 +290,139 @@ ul {
   #bar-main-container #firebase {
     margin-top: 120px; } }
 
+.commentBlock {
+  opacity: 1;
+  margin: 0px auto;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  min-height: 1vh;
+  max-height: auto;
+  padding: 50px;
+  max-width: 1000px;
+  line-height: 25px;
+  position: relative;
+  top: -150px;
+  color: black;
+  font-size: 28px;
+  box-shadow: 0px -8px 25px rgba(0, 0, 0, 0.5);
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: .3s; }
+  .commentBlock a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .commentBlock #btn-dark {
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    margin-left: -154px;
+    padding: 10px 15px;
+    letter-spacing: .3px; }
+  .commentBlock #text, .commentBlock #name {
+    display: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #cdcdcd; }
+  .commentBlock #text {
+    width: 100%;
+    min-height: 70%;
+    resize: none; }
+  .commentBlock #name {
+    width: 50%;
+    margin-top: -10px;
+    margin-bottom: 20px; }
+
+.center {
+  text-align: center; }
+
+@media (max-width: 1222px) {
+  .commentBlock {
+    padding: 50px 45px;
+    margin: 50px 65px;
+    font-size: 20px; } }
+@media (max-width: 767px) {
+  .commentBlock {
+    padding: 50px 24px;
+    margin: 50px 30px;
+    font-size: 14px; } }
+#to-fill {
+  height: 50px; }
+
+.quiz-container {
+  @extends %trans;
+  margin: auto auto;
+  margin-top: 50px;
+  height: 40vh;
+  min-width: 50vw;
+  max-width: 300px;
+  padding: 40px 20px;
+  background: rgba(30, 30, 30, 0.5);
+  color: white;
+  border-radius: 20px;
+  border: 2px solid black;
+  text-align: center;
+  animation: fadeIn 2s;
+  -moz-transition: .2s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out; }
+  .quiz-container .row {
+    justify-content: center;
+    width: 100%; }
+  .quiz-container .btn {
+    margin-bottom: 10px;
+    color: white !important;
+    font-weight: 600;
+    padding: 10px;
+    text-shadow: 0px 0px 3px black;
+    cursor: pointer; }
+  .quiz-container .btn-danger {
+    width: 35%; }
+  .quiz-container .btn-warning {
+    width: 32%; }
+  .quiz-container .btn-success {
+    width: 26%; }
+
+#submit-container {
+  -moz-transition: 1.6s ease-in-out;
+  -webkit-transition: 1.6s ease-in-out;
+  transition: 1.6s ease-in-out;
+  margin: auto auto;
+  height: 20vh;
+  min-width: 50vw;
+  max-width: 300px;
+  position: relative; }
+  #submit-container #quiz-submit {
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 60px calc(3.5% + 22px);
+    right: 10px;
+    top: 12px;
+    border: 2px solid black; }
+
+#finished-container {
+  display: block;
+  margin-top: 35vh;
+  text-align: center; }
+  #finished-container a > div {
+    position: relative;
+    top: 10px; }
+
+#final-button {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  padding: 15px 20px;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px; }
+  #final-button p {
+    margin: 4px 0; }
+
+@media (min-width: 800px) {
+  .quiz-container {
+    height: 20vh; } }
 * {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
@@ -286,9 +430,13 @@ ul {
 
 body {
   margin: 0px;
-  background-color: #0A0A0A;
+  background: #141414;
+  background-image: linear-gradient(#141414 -130px, rgba(20, 20, 20, 0.5)), repeating-linear-gradient(-45deg, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5) 5px, black 5px, black 10px), repeating-linear-gradient(45deg, black, black 5px, rgba(20, 20, 20, 0.5) 5px, rgba(20, 20, 20, 0.5) 10px);
+  background-repeat: no-repeat;
   font-size: 25px;
-  font-family: roboto; }
+  font-family: 'Signika Negative', sans-serif;
+  letter-spacing: 1px;
+  height: 100%; }
 
 #navbar {
   background: #141414;
@@ -296,13 +444,14 @@ body {
   top: 0;
   width: 100%;
   z-index: 2;
-  padding: 10px; }
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4); }
 
 #navbar > span {
   position: relative; }
 
 .extra-margin {
-  margin: 30px; }
+  margin: 26px; }
 
 #elements:hover #triangle {
   transform: rotate(180deg);
@@ -319,7 +468,7 @@ body {
   position: absolute;
   z-index: 4;
   top: 29px;
-  left: 113px; }
+  left: 103px; }
 
 .container-dropdown-elements-menu {
   opacity: 1;
@@ -328,13 +477,17 @@ body {
   height: 250px;
   width: 140px;
   top: 60px;
-  left: 85px; }
+  left: 390px;
+  margin-top: 2px; }
   .container-dropdown-elements-menu .dropdown-elements-menu {
     width: 100%;
     position: absolute;
     background: #141414;
     color: white;
-    z-index: 3; }
+    z-index: 3;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-top: none; }
 
 .dropdown-elements-menu ul {
   margin: 4px 0px;
@@ -426,6 +579,9 @@ body {
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out; }
 
+#quiz:hover .overlay-a {
+  width: 68%; }
+
 #elements:hover .overlay-a {
   width: 63%; }
 
@@ -459,7 +615,9 @@ body {
   background-size: cover;
   -moz-transition: .5s ease-in-out;
   -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out; }
+  transition: .5s ease-in-out;
+  animation: start-fade 1s, dna-fade 4.5s;
+  animation-delay: 0s, 1s; }
 
 .outer {
   height: 330px;
@@ -491,7 +649,7 @@ body {
   .outer {
     height: 260px; }
 
-  #science, #elements, #elements-dropdown, #stats, overlay-a {
+  #science, #elements, #elements-dropdown, #stats, #quiz, overlay-a {
     display: none; }
 
   #icon {
@@ -541,5 +699,21 @@ disappear {
   padding: 4px 10px;
   cursor: default;
   text-shadow: 1px 1px 2px black; }
+
+.element-picture {
+  transition: 0s;
+  -moz-transition: 0s;
+  -webkit-transition: 0s; }
+
+@keyframes dna-fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes start-fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
 
 /*# sourceMappingURL=formatting2.css.map */

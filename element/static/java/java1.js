@@ -1,3 +1,5 @@
+
+// Hamburger menu
 $('#hamburger').on('click', function() {
 
   if ($('ul').hasClass('disappear')) {
@@ -21,8 +23,8 @@ $('#hamburger').on('click', function() {
     }, 500)}
 });
 
+// Nav bar resize for every page
 $(window).resize(function() {
-
     if ($('#hidden-nav').hasClass('move2')) {
         $('#hidden-nav').toggleClass('move1');
         $('#hidden-nav').toggleClass('move2');
@@ -33,12 +35,11 @@ $(window).resize(function() {
     }
 });
 
+// Changes the opacity on the Science page
 function opacityFunction(elementV, opacityV) {
     $(elementV).css('opacity',opacityV);
 }
-
 var target = $('#space')
-
 $('#down-arrow').click(function(e){
     e.preventDefault();
     opacityFunction('#firstBlock',0);
@@ -49,3 +50,45 @@ $('#down-arrow').click(function(e){
     }, 5000);
     setTimeout("opacityFunction('#firstBlock',1)", 6000);
 })
+
+// Comment block on every element page
+$('#btn-dark').click(function() {
+    $('#text').css({display: "block"});
+    $('#commentBlock').css({height: '250px'});
+    $('#btn-dark').html('Click to Submit Comment');
+    $('#btn-dark').css({'top': '225px', 'margin-left': '-128px'});
+    $('#btn-dark').removeClass('btn-dark').addClass('btn-success');
+    $('#name').css({'display':'block'})
+});
+
+$('#quiz-submit').click(function() {
+
+    var selection_list = []
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

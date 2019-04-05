@@ -50,7 +50,7 @@ a, a:link, a:visited, a:hover {
     }
 
     & .hamburger-lines-toggle-two {
-      background:black;
+      background:#141414;
     }
     & .hamburger-lines-toggle-three {
       transform: rotate(-45deg);
@@ -76,9 +76,12 @@ a, a:link, a:visited, a:hover {
 .move2 {
   top: 0px;
   left: 0;
-  height: 400px;
+  height: 440px;
   width: 200px;
   padding-top: 30px;
+  border-right: 1px solid rgba(0,0,0,.4);
+  border-bottom: 1px solid rgba(0,0,0,.4);
+  z-index: 4;
 
   & ul, li, a {
     color: gray;

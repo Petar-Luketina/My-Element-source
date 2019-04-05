@@ -17,6 +17,11 @@
     top: 38vh;
 }
 
+.element-picture {
+    animation: start-fade .5s, dna-fade 5s;
+    animation-delay: 0s, .5s;
+}
+
 #bigFirePic {
     background: url('../pics/fire.jpg') top center no-repeat;
     @extend %bigZoom;
@@ -51,7 +56,10 @@
 }
 %bigZoom {
     height: 95vh;
-    background-size: cover
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    top:0;
 }
 
 #dna {
@@ -64,11 +72,18 @@
     -moz-transition: 1.4s ease-in-out;
 	-webkit-transition: 1.4s ease-in-out;
 	transition: 1.4s ease-in-out;
+	animation: dna-fade 3s;
 }
 
 #dna:hover {
 	-webkit-filter: blur(3px);
 	filter: blur(3px);
+}
+
+#firstBlock {
+    -moz-transition: 3s ;
+    -webkit-transition: 3s ;
+    transition: 3s;
 }
 
 .writingBlock {
@@ -88,7 +103,7 @@
     box-shadow: 0px -8px 25px rgba(0,0,0,.5);
     -moz-transition: .3s ;
     -webkit-transition: .3s ;
-    transition: 3s;
+    transition: .3s;
 
     & a {
         display: block;
@@ -114,5 +129,23 @@
         padding: 50px 24px;
         margin: 50px 30px;
         font-size: 14px;
+    }
+}
+
+@keyframes dna-fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes start-fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
     }
 }

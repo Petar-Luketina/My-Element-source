@@ -10,4 +10,5 @@ urlpatterns = [
     path('earth',               views.earth,                    name='earth'),
     path('wind',                views.wind,                     name='wind'),
     path('stats',               views.stats,                    name='stats'),
+    path('quiz',                views.quiz,                     name='quiz'),
 ]

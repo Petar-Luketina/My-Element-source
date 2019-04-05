@@ -2,7 +2,7 @@
 
     & #bar-header {
         opacity: 1;
-        margin-top: 50px;
+        margin-top: 90px;
         margin-bottom: 20px;
         text-align: center;
         color: white;
@@ -14,9 +14,10 @@
 
     & .bar-container {
         margin: 0 auto;
-        background: lighten(#141414,3%);
+        background: rgba(30,30,30,.5);
         height: 430px; width: 80%;
         position: relative;
+        border-radius: 5px;
 
         & .bar {
             position: absolute;
@@ -28,6 +29,8 @@
             -webkit-transition: 1s ease-in-out;
             transition: 1s ease-in-out;
             height: 0;
+            border-right: rgba(0,0,0,.2) solid 3px;
+            border-radius: 5px 5px 0 0;
         }
 
         & .bar:nth-child(1) {
@@ -170,6 +173,9 @@
         border: 3px solid #141414 ;
         padding: 13px 40px;
     }
+    & th {
+        letter-spacing: 3px;
+    }
 
     & th:nth-child(1) {
         text-align: right;
@@ -177,6 +183,10 @@
 
     & td:nth-child(odd) {
         text-align: right;
+    }
+
+    & tr:nth-child(6) {
+        background: rgba(148, 152, 158, .1);
     }
 
     & #firebase {

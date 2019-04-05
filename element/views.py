@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import requests
 import json
+from . import questions
+
 # Create your views here.
 
 
@@ -33,6 +35,7 @@ def science(request):
 
 
 def stats(request):
+
     url = 'https://my-element-c1df9.firebaseio.com/.json'
     auth_key = 'MjFhM9ptYix3uDIUemK4hqwDpdw5iyhdpggFZhQy'
     try:
@@ -55,5 +58,22 @@ def stats(request):
         return render(request, 'stats.html', elements)
 
     except ConnectionError:
-        return render(request, 'stats.html')
+        return HTML(request, 'stats.html')
 
+
+def quiz(request):
+
+    if request.method == 'POST':
+
+        form = request.POST.get('question-form')
+        print(form)
+
+        return render(request, 'quiz.html')
+
+    else:
+
+        qs = {
+            'qs': questions.question_list
+        }
+
+        return render(request, 'quiz.html', qs)

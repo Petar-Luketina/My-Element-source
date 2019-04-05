@@ -1,0 +1,57 @@
+<style>
+    .modal-body {
+        padding: 25px;
+        margin: 5px;
+    }
+    .modal-header {
+        padding: 20px 25px;
+    }
+</style>
+
+
+
+
+<br />
+<div id="commentBlock" class="commentBlock" >
+    <button id="btn-dark" data-toggle="modal" data-target="#modal" class="btn btn-dark">Click to Start Writing Comment</button>
+    <input id="name" placeholder="Your nickname">
+    <textarea id="text" placeholder="Your comment"></textarea>
+</div>
+
+
+
+
+<div id="modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalLabel">
+                    Working on it!
+                </h2>
+            </div>
+            <div class="modal-body">
+            This feature is still in progress. Alternatively, feel free to comment in the Play Store!
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" aria-label="Close" type="button">
+                    Okay, thanks.
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+    $(window).scroll(function() {
+        $('.element-picture').css({'top': String(($(window).scrollTop())/-3) + 'px'});
+    });
+
+</script>
