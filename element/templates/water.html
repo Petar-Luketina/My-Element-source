@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+    <meta name="description" content="My element is water. I am calming, meditative and accommodating. Water is agile and gracefully moves around all obstacles. Just like water, I clean negative energies with my optimistic disposition. It takes a lot to... [Take the quiz to reveal your element]">
 
     <style>
         li:nth-child(4) > a {
@@ -23,6 +24,16 @@
             </div>
         </div>
     </header>
+
+    {% include "share.html" %}
     {% include "comment.html" %}
+
+<script>
+    $(document).ready(function() {
+        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fpluketina.pythonanywhere.com%2Fwater')
+        $('#pin').children('a').attr('href', 'google.com')
+        $('#twit').children('a').attr('href', 'google.com')
+    });
+</script>
 
 {% endblock %}

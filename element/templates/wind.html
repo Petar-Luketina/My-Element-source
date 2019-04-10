@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+    <meta name="description" content="My element is wind. I am excitable, empathic, and energetic! Wind goes with the flow. Throughout my day, my emotional state sporadically changes, like the sudden shifts of wind. Even though I... [Take the quiz to reveal your element]">
 
     <style>
         li:nth-child(3) > a {
@@ -23,6 +24,16 @@
             </div>
         </div>
     </header>
+
+    {% include "share.html" %}
     {% include "comment.html" %}
+
+<script>
+    $(document).ready(function() {
+        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fpluketina.pythonanywhere.com%2Fwind')
+        $('#pin').children('a').attr('href', 'google.com')
+        $('#twit').children('a').attr('href', 'google.com')
+    });
+</script>
 
 {% endblock %}

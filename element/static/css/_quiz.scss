@@ -1,8 +1,8 @@
 #to-fill {
-    height: 50px;
+    height: 0px;
 }
 
-.quiz-container {
+.quiz-container, .quiz-container-special, .tie-breakers{
     @extends %trans;
     margin: auto auto;
     margin-top: 50px;
@@ -47,7 +47,15 @@
     }
 }
 
-#submit-container {
+.quiz-container-special{
+    margin-top: 86px;
+    }
+
+.tie-breakers {
+    display: none;
+}
+
+#submit-container, #submit-container2 {
     -moz-transition: 1.6s ease-in-out;
     -webkit-transition: 1.6s ease-in-out;
     transition: 1.6s ease-in-out;
@@ -57,7 +65,7 @@
     max-width: 300px;
     position: relative;
 
-    & #quiz-submit {
+    & #quiz-submit, #quiz-submit2 {
         padding: 10px 20px;
         font-size: 20px;
         margin: 60px calc(3.5% + 22px);
@@ -67,10 +75,12 @@
     }
 }
 
+#submit-container2 {
+    display: none;
+}
+
 #finished-container {
     display: block;
-    margin-top: 35vh;
-    text-align: center;
 
     & a > div {
         position: relative;
@@ -79,20 +89,80 @@
 }
 
 #final-button {
+    margin-top: 40vh;
+    position: relative;
     font-size: 28px;
     font-weight: 800;
     letter-spacing: 3px;
     padding: 15px 20px;
     border-radius: 50%;
     height: 200px; width: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        content: '';
+        border-radius: 50%;
+        height: 208px; width: 208px;
+        background: rgba(0,0,0,0);
+        border: 4px solid gray;
+    }
+
+    &::after {
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        content: '';
+        border-radius: 50%;
+        height: 210px; width: 210px;
+        background: rgba(0,0,0,0);
+        border: 7px solid gray;
+        animation: pulse 2.5s infinite;
+    }
+
+    &:hover{
+        p:nth-child(1), p:nth-child(3) {
+        color: gray;
+        }
+    }
 
     & p {
         margin: 4px 0;
+        transition: .3s;
     }
 }
 
 @media (min-width: 800px) {
-    .quiz-container {
-        height: 20vh;
+    .quiz-container, .quiz-container-special, .tie-breakers {
+        height: 28vh;
+    }
+}
+
+@media (min-width: 1350px) {
+    .quiz-container, .quiz-container-special, .tie-breakers {
+        height: 23vh;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        height: 210px; width: 210px;
+    }
+
+    22% {
+        opacity: .08;
+        border: 43px solid gray;
+        height: 290px; width: 290px;
+    }
+
+    55%, 100% {
+        opacity: 0;
+        border: 1px solid gray;
+        height: 400px; width: 400px;
     }
 }

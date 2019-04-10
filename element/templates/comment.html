@@ -13,7 +13,7 @@
 
 <br />
 <div id="commentBlock" class="commentBlock" >
-    <button id="btn-dark" data-toggle="modal" data-target="#modal" class="btn btn-dark">Click to Start Writing Comment</button>
+    <button id="btn-dark" data-toggle="modal" data-target="#modal" class="btn btn-dark">Write a Comment</button>
     <input id="name" placeholder="Your nickname">
     <textarea id="text" placeholder="Your comment"></textarea>
 </div>
@@ -41,17 +41,25 @@
     </div>
 </div>
 
-
-
-
-
-
-
+<div id="requests"></div>
 
 <script>
 
     $(window).scroll(function() {
         $('.element-picture').css({'top': String(($(window).scrollTop())/-3) + 'px'});
+    });
+
+    var url = 'http://127.0.0.1:8000/comments'
+
+    $(document).ready(function() {
+        var request = new XMLHttpRequest();
+        request.open('GET', url);
+        request.onload = function() {
+            console.log(request.responseText); // Not JSON formatted
+            var data = JSON.parse(request.responseText);
+            console.log(data);
+        }
+        request.send()
     });
 
 </script>

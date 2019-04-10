@@ -1,7 +1,7 @@
 question_list = {
-    '1st Question': 'I am the first one to apologize after a verbal fight.',
+    '1st Question': 'I am the first one to apologize after an argument.',
     '2nd Question': 'I tend to worry a lot throughout my day.',
-    '3rd Question': 'I often find myself in arguments.',
+    '3rd Question': 'I often find myself in disagreements.',
     '4th Question': 'I think first, then act.',
     '5th Question': 'The world treats me fairly.',
     '6th Question': 'I get too excited about the littlest things.',

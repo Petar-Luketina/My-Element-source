@@ -40,6 +40,7 @@ function opacityFunction(elementV, opacityV) {
     $(elementV).css('opacity',opacityV);
 }
 var target = $('#space')
+
 $('#down-arrow').click(function(e){
     e.preventDefault();
     opacityFunction('#firstBlock',0);
@@ -54,18 +55,21 @@ $('#down-arrow').click(function(e){
 // Comment block on every element page
 $('#btn-dark').click(function() {
     $('#text').css({display: "block"});
-    $('#commentBlock').css({height: '250px'});
-    $('#btn-dark').html('Click to Submit Comment');
-    $('#btn-dark').css({'top': '225px', 'margin-left': '-128px'});
+    $('#commentBlock').css({height: '353px'});
+    $('#btn-dark').html('Submit Comment');
+    $('#btn-dark').css({'top': '300px'});
     $('#btn-dark').removeClass('btn-dark').addClass('btn-success');
     $('#name').css({'display':'block'})
 });
 
-$('#quiz-submit').click(function() {
+$('.dropdown-elements-menu, #elements').mouseenter(function() {
+    $('.overlay-a:eq(4)').css('width', '63%');
+    $('#triangle').css({'transform':'rotate(180deg)', 'top':'35px'})
+});
 
-    var selection_list = []
-
-
+$('.dropdown-elements-menu, #elements').mouseleave(function() {
+    $('.overlay-a:eq(4)').css('width', '0');
+    $('#triangle').css({'transform':'rotate(0deg)', 'top':'29px'})
 });
 
 

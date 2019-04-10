@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+    <meta name="description" content="My element is fire. I am bold, competitive and unapologetic. Fire is fierce and at time uncontrollable. My ferocity allows me to... [Take the quiz to reveal your element]">
 
     <style>
         li:nth-child(1) > a {
@@ -24,7 +25,17 @@
             </div>
         </div>
     </header>
+
+    {% include "share.html" %}
     {% include "comment.html" %}
+
+<script>
+    $(document).ready(function() {
+        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fmyelement.us%2Ffire')
+        $('#pin').children('a').attr('href', 'google.com')
+        $('#twit').children('a').attr('href', 'google.com')
+    });
+</script>
 
 {% endblock %}
 

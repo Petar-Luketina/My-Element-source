@@ -2,8 +2,7 @@ from django.shortcuts import render
 import requests
 import json
 from . import questions
-
-# Create your views here.
+from django.http import JsonResponse
 
 
 def elements_index(request):
@@ -77,3 +76,14 @@ def quiz(request):
         }
 
         return render(request, 'quiz.html', qs)
+
+
+def comments(request):
+
+    context = {
+        'name': 'Petar',
+        'comment': 'This is a test!',
+        'password': 'password123',
+    }
+
+    return JsonResponse(context)

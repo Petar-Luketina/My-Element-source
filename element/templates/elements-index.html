@@ -10,7 +10,7 @@
 
     #icon .overlay-a {
         width: 60%;
-        background: pink;
+        background: pink linear-gradient(to right, white, pink);
     }
 
     #icon:hover .overlay-a {
@@ -28,7 +28,33 @@
     }
 
 </style>
-    <div class="row justify-content-center fade" style="margin-top: 80px;">
+
+    <div id="h1-container">
+
+        <div id="first-div">
+            <h1 style="color: white; font-size: 42px;">My Element</h1>
+            <h2>- Reveal What's Inside -</h2>
+        </div>
+
+        <div id="second-div">
+            <h1>Find your element</h1><h1>with unveiling questions</h1>
+            <a href="{% url 'quiz' %}"><i class="fas fa-eye"></i></a>
+        </div>
+
+        <div id="third-div">
+            <h1>View global results</h1><h1>from all quizzes</h1>
+            <a href="{% url 'stats' %}"><i class="far fa-chart-bar"></i></a>
+        </div>
+
+        <div id="fourth-div">
+            <h1>Explore all four</h1><h1>element personalities</h1>
+            <i class="fas fa-dna"></i>
+        </div>
+
+    </div>
+
+
+    <div class="row justify-content-center fade">
 
         <div class="outer col-xl-5 picture-container">
             <a href="{% url 'fire' %}">
@@ -77,4 +103,13 @@
         </div>
     </div>
     <div class="extra-margin"></div>
+
+    <script>
+        $('.fa-dna').click(function() {
+            $('html, body').stop().animate({
+                scrollTop: $('#firePic').offset().top - 100
+            }, 1000);
+        });
+    </script>
+
 {% endblock %}

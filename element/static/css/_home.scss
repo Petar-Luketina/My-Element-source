@@ -1,0 +1,132 @@
+$rainbow-l2r: linear-gradient(to right, purple, blue, cyan,green,lightgreen,yellow,orange,red,pink);
+
+@mixin slanted-div {
+    left: -5%;
+    width: 110%;
+    position: relative;
+    background: lighten(#141414,2%);
+    height: 420px;
+}
+
+#h1-container {
+    color: lighten(black, 80%);
+    text-align: center;
+    overflow:hidden;
+
+    h1 {
+        font-size: calc(30px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    }
+    h2 {
+        font-size: calc(20px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    i {
+        color: white;
+        font-size: 45px;
+    }
+
+    .far:hover, .fas:hover {
+        transition: .3s;
+        font-size: 50px;
+        cursor: pointer;
+    }
+
+    #first-div {
+        @include slanted-div;
+        transform: skewY(6deg);
+        height: 460px;
+        top: -60px;
+        border-bottom: 3px solid transparent;
+        border-image: $rainbow-l2r;
+        border-image-slice: 1;
+
+        h1, h2 {
+            position: relative;
+            top: 190px;
+            transform: skewY(-6deg);
+        }
+
+    }
+
+    #second-div, #fourth-div {
+        position: relative;
+        top: 80px;
+    }
+
+    #second-div {
+        margin-bottom: 260px;
+
+        .fa-eye {
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+    }
+
+    #fourth-div {
+        margin-bottom: 280px;
+        margin-top: 310px;
+        position: relative;
+
+        i {
+            position: absolute;
+            top: 184px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+
+    #third-div {
+        @include slanted-div;
+        margin-top: 200px;
+        height: 300px;
+        top: 50px;
+        transform: skewY(-6deg);
+        border-top: 3px solid transparent;
+        border-image: $rainbow-l2r;
+        border-image-slice: 1;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -195px;
+            height: 250px;
+            left: -5%;
+            width: 110%;
+            background: lighten(#141414,2%);
+            transform: skewY(12deg);
+            border-bottom: 3px solid transparent;
+            border-image: $rainbow-l2r;
+            border-image-slice: 1;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -175px;
+            height: 250px;
+            width: 100%;
+            background: lighten(#141414,2%);
+            transform: skewY(6deg);
+            z-index: -2;
+        }
+
+        h1 {
+            transform: skewY(6deg);
+            position: relative;
+            top: 150px;
+            z-index: 5;
+        }
+
+        i {
+            position: relative;
+            top: 205px;
+        }
+
+        .far {
+            z-index: 5;
+        }
+
+    }
+}

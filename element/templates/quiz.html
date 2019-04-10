@@ -10,7 +10,7 @@
 <style>
     #quiz .overlay-a {
         width:68%;
-        background: pink;
+        background: pink linear-gradient(to right, white, pink);
     }
     #quiz:hover .overlay-a {
         width:0;
@@ -21,163 +21,80 @@
 </style>
 {% endblock %}
 
-
-
 {% block body %}
+
+    <div style="overflow: hidden">
         <div id="finished-container">
-            <a href="" id="final-button" class="btn btn-light"><div><p>Reveal</p><p>Your</p><p>Element</p></div></a>
         </div>
-
-        <div id="to-fill"></div>
-        {% for num, q in qs.items %}
-            <div id="container{{ forloop.counter }}" class="container quiz-container">
-                <p>{{ forloop.counter }}) {{ q }}</p>
-                <div id="question{{ forloop.counter }}" class="row btn-group btn-group-toggle btn-group-justified" data-toggle="buttons">
-
-                    <label class="btn btn-danger label-btn">
-                        <input value="-1" class="col-md-3" type="radio" name="{{ forloop.counter }}" autocomplete="off">Disagree
-                    </label>
-
-                    <label class="btn btn-warning label-btn">
-                        <input value="0" class="col-md-3 " type="radio" name="{{ forloop.counter }}" autocomplete="off">Neutral
-                    </label>
-
-                    <label class="btn btn-success label-btn">
-                        <input value="1" class="col-md-3" type="radio" name="{{ forloop.counter }}" autocomplete="off">Agree
-                    </label>
-                </div>
-            </div>
-        {% endfor %}
-    <div id="submit-container">
-        <button id="quiz-submit" class="btn btn-dark">Submit!</button>
     </div>
+
+    <div id="intro" class="container quiz-container-special">
+        <p style="font-weight:900; letter-spacing: 2px;">Intro:</p><p>Choose a response that best describes you. That's it!</p>
+    </div>
+
+    <div class="container tie-breakers">
+        <div id="question17" class="row btn-group btn-group-toggle btn-group-justified" data-toggle="buttons">
+            <p>17) If people wrong me, I hold grudges against them.</p>
+            <label class="btn btn-danger label-btn" style="width:47%; border-radius: .25rem 0 0 .25rem">
+                <input value="-1" type="radio" name="17" autocomplete="off">Disagree
+            </label>
+
+            <label class="btn btn-success label-btn" style="width:47%">
+                <input value="1" type="radio" name="17" autocomplete="off">Agree
+            </label>
+        </div>
+    </div>
+
+    <div class="container tie-breakers">
+        <div id="question18" class="row btn-group btn-group-toggle btn-group-justified" data-toggle="buttons">
+            <p>18) It often feels like I have multiple personalities.</p>
+            <label class="btn btn-danger label-btn" style="width:47%; border-radius: .25rem 0 0 .25rem">
+                <input value="-1" type="radio" name="18" autocomplete="off">Disagree
+            </label>
+
+            <label class="btn btn-success label-btn" style="width:47%">
+                <input value="1" type="radio" name="18" autocomplete="off">Agree
+            </label>
+        </div>
+    </div>
+
+
+    <div id="submit-container2">
+        <button id="quiz-submit2" class="btn btn-dark submit-buttons">Finished, again!</button>
+    </div>
+
+    <div id="to-fill"></div>
+
+    {% for num, q in qs.items %}
+        <div id="container{{ forloop.counter }}" class="container quiz-container">
+            <p>{{ forloop.counter }}) {{ q }}</p>
+            <div id="question{{ forloop.counter }}" class="row btn-group btn-group-toggle btn-group-justified" data-toggle="buttons">
+
+                <label class="btn btn-danger label-btn">
+                    <input value="-1" type="radio" name="{{ forloop.counter }}" autocomplete="off">Disagree
+                </label>
+
+                <label class="btn btn-warning label-btn">
+                    <input value="0" type="radio" name="{{ forloop.counter }}" autocomplete="off">Neutral
+                </label>
+
+                <label class="btn btn-success label-btn">
+                    <input value="1" type="radio" name="{{ forloop.counter }}" autocomplete="off">Agree
+                </label>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div id="submit-container">
+        <button id="quiz-submit" class="btn btn-dark submit-buttons">Finished!</button>
+    </div>
+
 {% endblock %}
 
 
 
 {% block script %}
 
-<script>
+<script src = '{% static "java/quiz.js" %}'></script>
 
-    var questionList = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
-
-    $('.label-btn').click(function() {
-
-        // Setting the variable
-        var questionResult = Number($(this).children().val());
-        var questionNumber = Number($(this).children().attr('name'));
-
-        // Appending to the list of 16 questions
-        questionList[questionNumber - 1] = questionResult;
-
-        // Scrolling to the next question OR to the submit button if the quiz is finished
-
-        if (questionList.includes(null)) {
-            $('html, body').animate({scrollTop: $('#question' + String(questionNumber)).offset().top + 60}, 500);
-        }
-        else {
-            $('#quiz-submit').delay(400).css('border','2px solid white');
-            $('html, body').animate({scrollTop: $('#quiz-submit').offset().top}, 1300);
-        }
-
-        // Lessening the container after selecting
-        $('#question' + String(questionNumber)).css('opacity', '.3');
-
-        // Changing the border based on the selection
-        if (questionResult === -1) {
-            $('#container' + String(questionNumber)).css('border', '2px solid #DC3545');
-        }
-        else if (questionResult === 0) {
-            $('#container' + String(questionNumber)).css('border','2px solid #FFC107');
-        }
-        else {
-            $('#container' + String(questionNumber)).css('border','2px solid #28A475');
-        }
-    });
-
-
-        // Check if two elements have equal points
-        function checkForTieBreaker(array) {
-        array.sort(function(a,b){
-            return b - a
-        });
-        if (array[0] === array[1]) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    };
-
-
-    // Finds the sums of the personality trait lists
-    function sum(array) {
-        total = 0;
-        for (i in array) {
-            total += array[i];
-        };
-        console.log(total);
-        return total;
-    };
-
-    // When the Submit button is clicked
-    $('#quiz-submit').click(function() {
-
-        // Goes back if there are unanswered questions
-        if (questionList.includes(null) === true) {
-            $('html, body').animate({scrollTop: 0}, 1300);
-        }
-
-        // Commence with the completed quiz script
-        else {
-
-            // Moving everything towards the top
-            $('.quiz-container').fadeOut(1245);
-            $('html, body').animate({scrollTop: 0}, 1300);
-            $('#to-fill').delay(1000).css('margin-top','96.5vh');
-            $('#submit-container').fadeOut(200);
-
-            // Setting the personality trait lists
-            var agreeable    = [questionList[0], questionList[4], questionList[8],  questionList[12]]
-            var neurotic     = [questionList[1], questionList[5], questionList[9],  questionList[13]]
-            var disagreeable = [questionList[2], questionList[6], questionList[10], questionList[14]]
-            var stable       = [questionList[3], questionList[7], questionList[11], questionList[15]]
-
-            // Summing up the trait lists
-            var sumAgreeable = sum(agreeable);
-            var sumNeurotic = sum(neurotic);
-            var sumDisagreeable = sum(disagreeable);
-            var sumStable = sum(stable);
-
-            // Calculating the elements based on the summed trait lists
-            var fire = sumDisagreeable + sumNeurotic - sumAgreeable - sumStable;
-            var earth = sumDisagreeable + sumStable - sumAgreeable - sumNeurotic;
-            var water = sumAgreeable + sumStable - sumDisagreeable - sumNeurotic;
-            var wind = sumAgreeable + sumNeurotic - sumDisagreeable - sumStable;
-
-            var elements = [fire, earth, water, wind];
-
-            if (checkForTieBreaker(elements) === false) {
-                $('#finished-container').append("<a href='{% url "fire" %}' id='final-button' class='btn btn-dark'>Get Result</button>");
-                $('#finished-container').fadeIn(400);
-            }
-
-            else {
-                console.log('THERE IS A TIE BREAKER')
-            };
-
-        }
-    });
-
-
-
-
-
-
-
-
-
-
-
-</script>
 {% endblock %}
