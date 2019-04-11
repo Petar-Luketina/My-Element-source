@@ -1,11 +1,30 @@
 {% extends 'base2.html' %}
+{% load static %}
 
 {% block title %}
-    Fire
+    Fire Element
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="My element is fire. I am bold, competitive and unapologetic. Fire is fierce and at times uncontrollable. My ferocity allows me to... [Take the quiz to reveal your element]" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary" >
+    <meta name="twitter:title" content="Fire Element">
+    <meta name="twitter:description" content="My element is fire. I am bold, competitive and unapologetic. Fire is fierce and at times uncontrollable. My ferocity allows me to... [Take the quiz to reveal your element]">
+    <meta name="twitter:image" content="{% static '/pics/fire.jpg' %}">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Fire Element" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.myelement.com/fire" />
+    <meta property="og:image" content="{% static '/pics/fire.jpg' %}" />
+    <meta property="og:description" content="My element is fire. I am bold, competitive and unapologetic. Fire is fierce and at times uncontrollable. My ferocity allows me to... [Take the quiz to reveal your element]" />
+    <meta property="og:site_name" content="My Element" />
+
 {% endblock %}
 
 {% block body %}
-    <meta name="description" content="My element is fire. I am bold, competitive and unapologetic. Fire is fierce and at time uncontrollable. My ferocity allows me to... [Take the quiz to reveal your element]">
 
     <style>
         li:nth-child(1) > a {
@@ -31,9 +50,9 @@
 
 <script>
     $(document).ready(function() {
-        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fmyelement.us%2Ffire')
-        $('#pin').children('a').attr('href', 'google.com')
-        $('#twit').children('a').attr('href', 'google.com')
+        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.myelement.us%2Ffire')
+        $('#pin').children('a').attr('href', 'http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.myelement.us%2Ffire&description=My+element+is+fire.+I+am+bold%2C+competitive+and+unapologetic.+Fire+is+fierce+and+at+times+uncontrollable.+My+ferocity+allows+me+to...+%5BTake+the+quiz+to+reveal+your+element%5D')
+        $('#twit').children('a').attr('href', 'http://twitter.com/share?text=I%27m+a+fire+element%21&url=http%3A%2F%2Fwww.myelement.us%2Ffire')
     });
 </script>
 

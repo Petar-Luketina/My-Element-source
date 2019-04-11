@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff");
 @import url("https://fonts.googleapis.com/css?family=Signika+Negative");
 a, a:link, a:visited, a:hover {
   text-decoration: none; }
@@ -484,7 +485,10 @@ ul {
   #h1-container h1 {
     font-size: calc(30px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); }
   #h1-container h2 {
-    font-size: calc(20px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); }
+    font-size: calc(40px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-family: 'Herr Von Muellerhoff', cursive;
+    letter-spacing: 2px;
+    animation: start-fades 10s; }
   #h1-container i {
     color: white;
     font-size: 45px; }
@@ -496,7 +500,7 @@ ul {
     left: -5%;
     width: 110%;
     position: relative;
-    background: #191919;
+    background: #0a0a0a;
     height: 420px;
     transform: skewY(6deg);
     height: 460px;
@@ -531,7 +535,7 @@ ul {
     left: -5%;
     width: 110%;
     position: relative;
-    background: #191919;
+    background: #0a0a0a;
     height: 420px;
     margin-top: 200px;
     height: 300px;
@@ -547,7 +551,7 @@ ul {
       height: 250px;
       left: -5%;
       width: 110%;
-      background: #191919;
+      background: #0a0a0a;
       transform: skewY(12deg);
       border-bottom: 3px solid transparent;
       border-image: linear-gradient(to right, purple, blue, cyan, green, lightgreen, yellow, orange, red, pink);
@@ -558,7 +562,7 @@ ul {
       bottom: -175px;
       height: 250px;
       width: 100%;
-      background: #191919;
+      background: #0a0a0a;
       transform: skewY(6deg);
       z-index: -2; }
     #h1-container #third-div h1 {
@@ -572,6 +576,11 @@ ul {
     #h1-container #third-div .far {
       z-index: 5; }
 
+@keyframes start-fades {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 * {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
@@ -709,7 +718,8 @@ body {
   padding: 0; }
 
 .changed-a {
-  position: relative; }
+  position: relative;
+  cursor: default; }
 
 .changed-a > a {
   color: white;
@@ -865,6 +875,6 @@ disappear {
   0% {
     opacity: 0; }
   100% {
-    opacity: 0; } }
+    opacity: 1; } }
 
 /*# sourceMappingURL=formatting2.css.map */

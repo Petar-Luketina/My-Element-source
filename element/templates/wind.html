@@ -1,11 +1,30 @@
 {% extends 'base2.html' %}
+{% load static %}
 
 {% block title %}
-    Wind
+    Wind Element
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="My element is wind. I am excitable, empathic and energetic! Wind goes with the flow. Throughout the day, my emotional state sporadically changes, like the sudden shifts of wind. Even though I... [Take the quiz to reveal your element]" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Wind Element" />
+    <meta name="twitter:description" content="My element is wind. I am excitable, empathic and energetic! Wind goes with the flow. Throughout the day, my emotional state sporadically changes, like the sudden.. Take the quiz to reveal your element" />
+    <meta name="twitter:image" content="{% static '/pics/wind.jpg' %}" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Wind Element" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.myelement.com/wind" />
+    <meta property="og:image" content="{% static '/pics/wind.jpg' %}" />
+    <meta property="og:description" content="My element is wind. I am excitable, empathic and energetic! Wind goes with the flow. Throughout the day, my emotional state sporadically changes, like the sudden shifts of wind. Even though I... [Take the quiz to reveal your element]" />
+    <meta property="og:site_name" content="My Element" />
+
 {% endblock %}
 
 {% block body %}
-    <meta name="description" content="My element is wind. I am excitable, empathic, and energetic! Wind goes with the flow. Throughout my day, my emotional state sporadically changes, like the sudden shifts of wind. Even though I... [Take the quiz to reveal your element]">
 
     <style>
         li:nth-child(3) > a {
@@ -30,9 +49,9 @@
 
 <script>
     $(document).ready(function() {
-        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fpluketina.pythonanywhere.com%2Fwind')
-        $('#pin').children('a').attr('href', 'google.com')
-        $('#twit').children('a').attr('href', 'google.com')
+        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.myelement.us%2Fwind')
+        $('#pin').children('a').attr('href', 'http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.myelement.us%2Fwind&description=My+element+is+wind.+I+am+excitable%2C+empathic+and+energetic%21+Wind+goes+with+the+flow.+Throughout+the+day%2C+my+emotional+state+sporadically+changes%2C+like+the+sudden+shifts+of+wind.+Even+though+I...+%5BTake+the+quiz+to+reveal+your+element%5D')
+        $('#twit').children('a').attr('href', 'http://twitter.com/share?text=I%27m+a+wind+element%21&url=http%3A%2F%2Fwww.myelement.us%2Fwind')
     });
 </script>
 

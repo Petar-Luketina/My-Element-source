@@ -1,11 +1,30 @@
 {% extends 'base2.html' %}
+{% load static %}
 
 {% block title %}
-    Water
+    Water Element
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="My element is water. I am calming, meditative and accommodating. Water is agile and gracefully moves around all obstacles. Just like water, I clean negative energies with my optimistic disposition. It takes a lot to... [Take the quiz to reveal your element]" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Water Element" />
+    <meta name="twitter:description" content="My element is water. I am calming, meditative and accommodating. Water is agile and gracefully moves around all obstacles. Like water, I clean negative energies.. Take the quiz to reveal your element" />
+    <meta name="twitter:image" content="{% static '/pics/water.jpg' %}" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Water Element" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.myelement.com/water" />
+    <meta property="og:image" content="{% static '/pics/water.jpg' %}" />
+    <meta property="og:description" content="My element is water. I am calming, meditative and accommodating. Water is agile and gracefully moves around all obstacles. Just like water, I clean negative energies with my optimistic disposition. It takes a lot to... [Take the quiz to reveal your element]"/>
+    <meta property="og:site_name" content="My Element" />
+
 {% endblock %}
 
 {% block body %}
-    <meta name="description" content="My element is water. I am calming, meditative and accommodating. Water is agile and gracefully moves around all obstacles. Just like water, I clean negative energies with my optimistic disposition. It takes a lot to... [Take the quiz to reveal your element]">
 
     <style>
         li:nth-child(4) > a {
@@ -30,9 +49,9 @@
 
 <script>
     $(document).ready(function() {
-        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fpluketina.pythonanywhere.com%2Fwater')
-        $('#pin').children('a').attr('href', 'google.com')
-        $('#twit').children('a').attr('href', 'google.com')
+        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.myelement.us%2Fwater')
+        $('#pin').children('a').attr('href', 'http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.myelement.us%2Fwater&description=My+element+is+water.+I+am+calming%2C+meditative+and+accommodating.+Water+is+agile+and+gracefully+moves+around+all+obstacles.+Just+like+water%2C+I+clean+negative+energies+with+my+optimistic+disposition.+It+takes+a+lot+to...+%5BTake+the+quiz+to+reveal+your+element%5D')
+        $('#twit').children('a').attr('href', 'http://twitter.com/share?text=I%27m+a+water+element%21&url=http%3A%2F%2Fwww.myelement.us%2Fwater')
     });
 </script>
 

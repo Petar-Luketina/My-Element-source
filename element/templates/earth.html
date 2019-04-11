@@ -1,17 +1,34 @@
 {% extends 'base2.html' %}
+{% load static %}
 
 {% block title %}
-    Earth
+    Earth Element
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="My element is earth. I am firm, level-headed and down-to-earth. My emotional stability rivals that of maintains. Like a snow-covered peak, I keep a cool head in difficult situations. When faced with danger, I have... [Take the quiz to reveal your element]" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Earth Element" />
+    <meta name="twitter:description" content="My element is earth. I am firm, level-headed and down-to-earth. My emotional stability rivals that of maintains. Like a snow-covered peak, I ... [Take the quiz to reveal your element]" />
+    <meta name="twitter:image" content="{% static '/pics/earth.jpg' %}" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Earth Element" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.myelement.com/earth" />
+    <meta property="og:image" content="{% static '/pics/earth.jpg' %}" />
+    <meta property="og:description" content="My element is earth. I am firm, level-headed and down-to-earth. My emotional stability rivals that of maintains. Like a snow-covered peak, I keep a cool head in difficult situations. When faced with danger, I have... [Take the quiz to reveal your element]" />
+    <meta property="og:site_name" content="My Element" />
 {% endblock %}
 
 {% block body %}
-    <meta name="description" content="My element is earth. I am firm, level-headed and down-to-earth. My emotional stability rivals that of maintains. Like a snow-covered peek, I keep a cool head in difficult situations. When faced with danger, I have... [Take the quiz to reveal your element]">
 
     <style>
         li:nth-child(2) > a {
             color: white;
         }
-
     </style>
 
     <header>
@@ -19,7 +36,7 @@
         <div>
             <div class="writingBlock">
                 <p class="center">Firm | Level-headed | Down-to-earth</p>
-                <p>Earth is tough and doesn't back down. My emotional stability rivals that of mountains. Like a snow-covered peek, I keep a cool head in difficult situations. When faced with danger, earth has the potential to devastate its surroundings through destructive earthquakes and ravaging rock slides. The other elements unanimously appreciate my levelheadedness much more than my power though. Consequently, I'll continue to use my cool head to guide the other elements to positive change.</p>
+                <p>Earth is tough and doesn't back down. My emotional stability rivals that of mountains. Like a snow-covered peak, I keep a cool head in difficult situations. When faced with danger, earth has the potential to devastate its surroundings through destructive earthquakes and ravaging rock slides. The other elements unanimously appreciate my levelheadedness much more than my power though. Consequently, I'll continue to use my cool head to guide the other elements to positive change.</p>
                 <p class="center">Get the app to reveal your element, and see how you interact with an earth element!<p>
                 <span class="center"><a href="https://play.google.com/store/apps/details?id=myelement1.myapp">To Play Store</a></span>
             </div>
@@ -31,9 +48,9 @@
 
 <script>
     $(document).ready(function() {
-        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fpluketina.pythonanywhere.com%2Fearth')
-        $('#pin').children('a').attr('href', "http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fpluketina.pythonanywhere.com%2Fearth")
-        $('#twit').children('a').attr('href', 'google.com')
+        $('#fb').children('a').attr('href', 'https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.myelement.us%2Fearth')
+        $('#pin').children('a').attr('href', 'http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.myelement.us%2Fearth&description=My+element+is+earth.+I+am+firm%2C+level-headed+and+down-to-earth.+My+emotional+stability+rivals+that+of+maintains.+Like+a+snow-covered+peak%2C+I+keep+a+cool+head+in+difficult+situations.+When+faced+with+danger%2C+I+have...+%5BTake+the+quiz+to+reveal+your+element%5D')
+        $('#twit').children('a').attr('href', 'http://twitter.com/share?text=I%27m+an+earth+element%21&url=http%3A%2F%2Fwww.myelement.us%2Fearth')
     });
 </script>
 

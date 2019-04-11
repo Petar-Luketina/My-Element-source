@@ -2,7 +2,24 @@
 {% load static %}
 
 {% block title %}
-    Global Results
+    Global Quiz Results
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="See all the results from the quiz takers around the world. User results are taken from the Android app and the online quiz." />
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="My Element" />
+    <meta name="twitter:description" content="See all the results from the quiz takers around the world. User results are taken from the Android app and the online quiz." />
+    <meta name="twitter:image" content="{% static '/pics/mist.jpeg' %}" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="My Element Home Page" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.myelement.com/" />
+    <meta property="og:image" content="{% static '/pics/mist.jpeg' %}" />
+    <meta property="og:description" content="Answer the question: What is my element? And discover the truth about your element." />
+    <meta property="og:site_name" content="My Element" />
 {% endblock %}
 
 {% block body %}
@@ -15,6 +32,9 @@
 
         #stats:hover .overlay-a {
             width:0;
+        }
+        #stats:hover a {
+            cursor: default;
         }
         ul:nth-child(3) > a {
             color: white;

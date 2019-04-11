@@ -190,6 +190,7 @@ body {
 
 .changed-a {
     position: relative;
+    cursor: default;
 }
 
 .changed-a > a {
@@ -404,7 +405,7 @@ disappear {
         opacity: 0;
     }
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }
 

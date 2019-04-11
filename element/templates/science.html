@@ -1,4 +1,5 @@
 {% extends 'base2.html' %}
+{% load static %}
 
 {% block title %}
     The Science
@@ -14,6 +15,9 @@
 
     #science:hover .overlay-a {
         width:0;
+    }
+    #science:hover a {
+        cursor: default;
     }
 
     .writingBlock {

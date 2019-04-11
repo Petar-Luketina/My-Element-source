@@ -4,7 +4,7 @@ $rainbow-l2r: linear-gradient(to right, purple, blue, cyan,green,lightgreen,yell
     left: -5%;
     width: 110%;
     position: relative;
-    background: lighten(#141414,2%);
+    background: lighten(black,4%);
     height: 420px;
 }
 
@@ -17,7 +17,10 @@ $rainbow-l2r: linear-gradient(to right, purple, blue, cyan,green,lightgreen,yell
         font-size: calc(30px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     }
     h2 {
-        font-size: calc(20px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+        font-size: calc(40px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+        font-family: 'Herr Von Muellerhoff', cursive;
+        letter-spacing: 2px;
+        animation: start-fades 10s;
     }
 
     i {
@@ -95,19 +98,20 @@ $rainbow-l2r: linear-gradient(to right, purple, blue, cyan,green,lightgreen,yell
             height: 250px;
             left: -5%;
             width: 110%;
-            background: lighten(#141414,2%);
+            background: lighten(black,4%);
             transform: skewY(12deg);
             border-bottom: 3px solid transparent;
             border-image: $rainbow-l2r;
             border-image-slice: 1;
         }
+
         &::before {
             content: '';
             position: absolute;
             bottom: -175px;
             height: 250px;
             width: 100%;
-            background: lighten(#141414,2%);
+            background: lighten(black,4%);
             transform: skewY(6deg);
             z-index: -2;
         }
@@ -128,5 +132,16 @@ $rainbow-l2r: linear-gradient(to right, purple, blue, cyan,green,lightgreen,yell
             z-index: 5;
         }
 
+    }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff');
+
+@keyframes start-fades {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
