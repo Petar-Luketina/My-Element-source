@@ -890,6 +890,10 @@ disappear {
   -moz-transition: 0s;
   -webkit-transition: 0s; }
 
+.fa-google-play {
+  font-size: calc(30px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: #2e2e2e; }
+
 @keyframes dna-fade {
   0% {
     opacity: 0; }
