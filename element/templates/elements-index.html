@@ -23,7 +23,7 @@
 
 {% endblock %}
 
-{% block body %}
+{% block style %}
 
 <style>
 
@@ -37,20 +37,22 @@
     #icon:hover .overlay-a {
         width:0;
     }
-
     @media (max-width: 768px) {
         .overlay-a {
             display:none;
         }
     }
-
     ul:nth-child(1) > a {
         color: white;
     }
 
 </style>
 
-    <div id="h1-container">
+{% endblock %}
+
+{% block body %}
+
+    <div class="h1-container">
 
         <div id="first-div">
             <h1 style="color: white; font-size: 52px;">My Element</h1>
@@ -123,13 +125,27 @@
             </a>
         </div>
     </div>
-    <div class="extra-margin"></div>
+
+
+    <div class="h1-container" style="overflow: hidden; height: 300px;">
+        <div id="last-div"></div>
+    </div>
+
+    <div style="position: relative;">
+        <i class="fas fa-arrow-alt-circle-up"></i>
+    </div>
 
     <script>
         $('.fa-dna').click(function() {
             $('html, body').stop().animate({
                 scrollTop: $('#firePic').offset().top - 100
             }, 1000);
+        });
+
+        $('.fa-arrow-alt-circle-up').click(function() {
+            $('html, body').stop().animate({
+                scrollTop: $( 'html' ).offset().top
+            },700);
         });
 
     </script>

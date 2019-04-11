@@ -8,7 +8,7 @@ $rainbow-l2r: linear-gradient(to right, purple, blue, cyan,green,lightgreen,yell
     height: 420px;
 }
 
-#h1-container {
+.h1-container {
     color: lighten(black, 80%);
     text-align: center;
     overflow:hidden;
@@ -133,6 +133,29 @@ $rainbow-l2r: linear-gradient(to right, purple, blue, cyan,green,lightgreen,yell
         }
 
     }
+
+    #last-div {
+        @include slanted-div;
+        height:350px;
+        margin-top: 80px;
+        top: 50px;
+        transform: skewY(-6deg);
+        border-top: 3px solid transparent;
+        border-image: $rainbow-l2r;
+        border-image-slice: 1;
+    }
+}
+
+.fa-arrow-alt-circle-up {
+    position: absolute;
+    font-size: calc(40px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));    top: -120px;
+    right: 50px;
+    cursor: pointer;
+    color: lighten(#141414,30%);
+}
+
+.fa-arrow-alt-circle-up:hover {
+    color: lighten(#141414,60%);
 }
 
 @import url('https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff');

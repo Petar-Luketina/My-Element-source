@@ -478,25 +478,25 @@ ul {
     border: 1px solid gray;
     height: 400px;
     width: 400px; } }
-#h1-container {
+.h1-container {
   color: #cccccc;
   text-align: center;
   overflow: hidden; }
-  #h1-container h1 {
+  .h1-container h1 {
     font-size: calc(30px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); }
-  #h1-container h2 {
+  .h1-container h2 {
     font-size: calc(40px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     font-family: 'Herr Von Muellerhoff', cursive;
     letter-spacing: 2px;
     animation: start-fades 10s; }
-  #h1-container i {
+  .h1-container i {
     color: white;
     font-size: 45px; }
-  #h1-container .far:hover, #h1-container .fas:hover {
+  .h1-container .far:hover, .h1-container .fas:hover {
     transition: .3s;
     font-size: 50px;
     cursor: pointer; }
-  #h1-container #first-div {
+  .h1-container #first-div {
     left: -5%;
     width: 110%;
     position: relative;
@@ -508,30 +508,30 @@ ul {
     border-bottom: 3px solid transparent;
     border-image: linear-gradient(to right, purple, blue, cyan, green, lightgreen, yellow, orange, red, pink);
     border-image-slice: 1; }
-    #h1-container #first-div h1, #h1-container #first-div h2 {
+    .h1-container #first-div h1, .h1-container #first-div h2 {
       position: relative;
       top: 190px;
       transform: skewY(-6deg); }
-  #h1-container #second-div, #h1-container #fourth-div {
+  .h1-container #second-div, .h1-container #fourth-div {
     position: relative;
     top: 80px; }
-  #h1-container #second-div {
+  .h1-container #second-div {
     margin-bottom: 260px; }
-    #h1-container #second-div .fa-eye {
+    .h1-container #second-div .fa-eye {
       position: absolute;
       top: 180px;
       left: 50%;
       transform: translate(-50%, -50%); }
-  #h1-container #fourth-div {
+  .h1-container #fourth-div {
     margin-bottom: 280px;
     margin-top: 310px;
     position: relative; }
-    #h1-container #fourth-div i {
+    .h1-container #fourth-div i {
       position: absolute;
       top: 184px;
       left: 50%;
       transform: translate(-50%, -50%); }
-  #h1-container #third-div {
+  .h1-container #third-div {
     left: -5%;
     width: 110%;
     position: relative;
@@ -544,7 +544,7 @@ ul {
     border-top: 3px solid transparent;
     border-image: linear-gradient(to right, purple, blue, cyan, green, lightgreen, yellow, orange, red, pink);
     border-image-slice: 1; }
-    #h1-container #third-div::after {
+    .h1-container #third-div::after {
       content: '';
       position: absolute;
       bottom: -195px;
@@ -556,7 +556,7 @@ ul {
       border-bottom: 3px solid transparent;
       border-image: linear-gradient(to right, purple, blue, cyan, green, lightgreen, yellow, orange, red, pink);
       border-image-slice: 1; }
-    #h1-container #third-div::before {
+    .h1-container #third-div::before {
       content: '';
       position: absolute;
       bottom: -175px;
@@ -565,16 +565,40 @@ ul {
       background: #0a0a0a;
       transform: skewY(6deg);
       z-index: -2; }
-    #h1-container #third-div h1 {
+    .h1-container #third-div h1 {
       transform: skewY(6deg);
       position: relative;
       top: 150px;
       z-index: 5; }
-    #h1-container #third-div i {
+    .h1-container #third-div i {
       position: relative;
       top: 205px; }
-    #h1-container #third-div .far {
+    .h1-container #third-div .far {
       z-index: 5; }
+  .h1-container #last-div {
+    left: -5%;
+    width: 110%;
+    position: relative;
+    background: #0a0a0a;
+    height: 420px;
+    height: 350px;
+    margin-top: 80px;
+    top: 50px;
+    transform: skewY(-6deg);
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(to right, purple, blue, cyan, green, lightgreen, yellow, orange, red, pink);
+    border-image-slice: 1; }
+
+.fa-arrow-alt-circle-up {
+  position: absolute;
+  font-size: calc(40px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  top: -120px;
+  right: 50px;
+  cursor: pointer;
+  color: #616161; }
+
+.fa-arrow-alt-circle-up:hover {
+  color: #adadad; }
 
 @keyframes start-fades {
   0% {
