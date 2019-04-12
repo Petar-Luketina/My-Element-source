@@ -14,19 +14,51 @@ def explore(request):
 
 
 def fire(request):
-    return render(request, 'fire.html')
+
+    get = requests.get(url_comment + 'Fire/Comments/.json?auth=' + auth_comment_key)
+    got_comments = get.json()
+
+    comments = {
+        'comments': got_comments,
+    }
+
+    return render(request, 'fire.html', comments)
 
 
 def water(request):
-    return render(request, 'water.html')
+
+    get = requests.get(url_comment + 'Water/Comments/.json?auth=' + auth_comment_key)
+    got_comments = get.json()
+
+    comments = {
+        'comments': got_comments,
+    }
+
+    return render(request, 'water.html', comments)
 
 
 def wind(request):
-    return render(request, 'wind.html')
+
+    get = requests.get(url_comment + 'Wind/Comments/.json?auth=' + auth_comment_key)
+    got_comments = get.json()
+
+    comments = {
+        'comments': got_comments,
+    }
+
+    return render(request, 'wind.html', comments)
 
 
 def earth(request):
-    return render(request, 'earth.html')
+
+    get = requests.get(url_comment + 'Earth/Comments/.json?auth=' + auth_comment_key)
+    got_comments = get.json()
+
+    comments = {
+        'comments': got_comments,
+    }
+
+    return render(request, 'earth.html', comments)
 
 
 def science(request):
@@ -35,8 +67,6 @@ def science(request):
 
 def stats(request):
 
-    url = 'https://my-element-c1df9.firebaseio.com/.json'
-    auth_key = 'MjFhM9ptYix3uDIUemK4hqwDpdw5iyhdpggFZhQy'
     try:
         get = requests.get(url + '?auth=' + auth_key)
         elements = get.json()
@@ -78,12 +108,34 @@ def quiz(request):
         return render(request, 'quiz.html', qs)
 
 
-def comments(request):
+def api(request):
 
-    context = {
-        'name': 'Petar',
-        'comment': 'This is a test!',
-        'password': 'password123',
+    get = requests.get(url + '?auth=' + auth_key)
+    elements = get.json()
+    total = elements['Fire'] + elements['Wind'] + elements['Earth'] + elements['Water']
+    elements = {
+
+        'Fire': {
+            'Number':  elements['Fire'],
+            'Percent': round(((elements['Fire'] / total) * 100), 1),
+        },
+
+        'Wind': {
+            'Number': elements['Wind'],
+            'Percent': round(((elements['Wind'] / total) * 100), 1),
+        },
+
+        'Earth': {
+            'Number': elements['Earth'],
+            'Percent': round(((elements['Earth'] / total) * 100), 1),
+        },
+
+        'Water': {
+            'Number': elements['Water'],
+            'Percent': round(((elements['Water'] / total) * 100), 1),
+        },
+
+        'Total': total,
     }
 
-    return JsonResponse(context)
+    return JsonResponse(elements, json_dumps_params={'indent': 2})

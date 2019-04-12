@@ -11,7 +11,6 @@
 
 
 
-<br />
 <div id="commentBlock" class="commentBlock" >
     <button id="btn-dark" data-toggle="modal" data-target="#modal" class="btn btn-dark">Write a Comment</button>
     <input id="name" placeholder="Your nickname">
@@ -41,25 +40,36 @@
     </div>
 </div>
 
-<div id="requests"></div>
 
-<script>
+{% for line in comments.items %}
+    <div class="comment-container">
+        <div class="comment">
+        {% for comment in line %}
+            <div class="date">
+                {{ comment.Date }}
+            </div>
+            <div class="name">
+                {{ comment.Name }}
+            </div>
+            <div class="comment">
+                {{ comment.Comment }}
+            </div>
+        </div>
+            <br />
+            {% for line_two in comment.Replays.items %}
+                {% for reply in line_two %}
+                    <div class="reply-date">
+                        {{ reply.Date }}
+                    </div>
+                    <div class="reply-name">
+                        {{ reply.Name }}
+                    </div>
+                    <div class="reply-comment">
+                        {{ reply.Comment }}
+                    </div>
+    </div>
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
 
-    $(window).scroll(function() {
-        $('.element-picture').css({'top': String(($(window).scrollTop())/-3) + 'px'});
-    });
-
-    var url = 'http://127.0.0.1:8000/comments'
-
-    $(document).ready(function() {
-        var request = new XMLHttpRequest();
-        request.open('GET', url);
-        request.onload = function() {
-            console.log(request.responseText); // Not JSON formatted
-            var data = JSON.parse(request.responseText);
-            console.log(data);
-        }
-        request.send()
-    });
-
-</script>

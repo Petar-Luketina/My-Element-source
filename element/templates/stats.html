@@ -108,16 +108,36 @@
             </div>
         </div>
         <div style="margin: 30px;"></div>
-    </body>
+
 <script>
-    $('.bar-percent').css('opacity', '1');
-    $('.bar:nth-child(1)').css('height', 'calc({{ FirePercent }}% * 2.2)');
-    $('#barOne').css('height', 'calc({{ FirePercent }}% * 2.2)');
-    $('.bar:nth-child(2)').css('height', 'calc({{ EarthPercent }}% * 2.2)');
-    $('#barTwo').css('height', 'calc({{ EarthPercent }}% * 2.2)');
-    $('.bar:nth-child(3)').css('height', 'calc({{ WindPercent }}% * 2.2)');
-    $('#barThree').css('height', 'calc({{ WindPercent }}% * 2.2)');
-    $('.bar:nth-child(4)').css('height', 'calc({{ WaterPercent }}% * 2.2)');
-    $('#barFour').css('height', 'calc({{ WaterPercent }}% * 2.2)');
+
+    $( '.bar-percent' ).css('opacity', '1');
+    $( '.bar:nth-child(1)' ).css('height', 'calc({{ FirePercent }}% * 2.2)');
+    $( '#barOne' ).css('height', 'calc({{ FirePercent }}% * 2.2)');
+    $( '.bar:nth-child(2)' ).css('height', 'calc({{ EarthPercent }}% * 2.2)');
+    $( '#barTwo' ).css('height', 'calc({{ EarthPercent }}% * 2.2)');
+    $( '.bar:nth-child(3)' ).css('height', 'calc({{ WindPercent }}% * 2.2)');
+    $( '#barThree' ).css('height', 'calc({{ WindPercent }}% * 2.2)');
+    $( '.bar:nth-child(4)' ).css('height', 'calc({{ WaterPercent }}% * 2.2)');
+    $( '#barFour' ).css('height', 'calc({{ WaterPercent }}% * 2.2)');
+
+
+    $(window).scroll(function() {
+        $('.element-picture').css({'top': String(($(window).scrollTop())/-3) + 'px'});
+    });
+
+    var url = 'http://127.0.0.1:8000/api'
+
+    $(document).ready(function() {
+        var request = new XMLHttpRequest();
+        request.open('GET', url);
+        request.onload = function() {
+            console.log(request.responseText); // Not JSON formatted
+            var data = JSON.parse(request.responseText);
+            console.log(data);
+        }
+        request.send()
+    });
+
 </script>
 {% endblock %}
