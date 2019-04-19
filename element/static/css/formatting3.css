@@ -16,8 +16,8 @@
   top: 38vh; }
 
 .element-picture {
-  animation: start-fade .5s, dna-fade 5s;
-  animation-delay: 0s, .5s; }
+  animation: start-fade .3s, dna-fade 5s;
+  animation-delay: 0s, .3s; }
 
 #bigFirePic {
   background: url("../pics/fire.jpg") top center no-repeat; }

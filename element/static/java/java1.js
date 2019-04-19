@@ -52,16 +52,6 @@ $('#down-arrow').click(function(e){
     setTimeout("opacityFunction('#firstBlock',1)", 6000);
 })
 
-// Comment block on every element page
-$('#btn-dark').click(function() {
-    $('#text').css({display: "block"});
-    $('#commentBlock').css({height: '353px'});
-    $('#btn-dark').html('Submit Comment');
-    $('#btn-dark').css({'top': '300px'});
-    $('#btn-dark').removeClass('btn-dark').addClass('btn-success');
-    $('#name').css({'display':'block'})
-});
-
 $('.dropdown-elements-menu, #elements').mouseenter(function() {
     $('.overlay-a:eq(4)').css('width', '63%');
     $('#triangle').css({'transform':'rotate(180deg)', 'top':'35px'})

@@ -9,6 +9,13 @@ def elements_index(request):
     return render(request, 'elements-index.html')
 
 
+url = 'https://my-element-c1df9.firebaseio.com/.json'
+auth_key = 'MjFhM9ptYix3uDIUemK4hqwDpdw5iyhdpggFZhQy'
+
+url_comment = 'https://my-element-comments.firebaseio.com/'
+auth_comment_key = 'n2NeUhb4zj7tbkHietdv1Qr1LP4F5UbhiFkHku0Z'
+
+
 def explore(request):
     return render(request, 'explore.html')
 

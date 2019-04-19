@@ -12,64 +12,54 @@
 
 
 <div id="commentBlock" class="commentBlock" >
-    <button id="btn-dark" data-toggle="modal" data-target="#modal" class="btn btn-dark">Write a Comment</button>
+    <button id="btn-dark" class="btn btn-success"> <span>✏️ </span> ️Comment️</button>
     <input id="name" placeholder="Your nickname">
     <textarea id="text" placeholder="Your comment"></textarea>
 </div>
 
 
-
-
-<div id="modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="modalLabel">
-                    Working on it!
-                </h2>
-            </div>
-            <div class="modal-body">
-            This feature is still in progress. Alternatively, feel free to comment in the Play Store!
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-dismiss="modal" aria-label="Close" type="button">
-                    Okay, thanks.
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 {% for line in comments.items %}
+    {% for comment in line %}
     <div class="comment-container">
         <div class="comment">
-        {% for comment in line %}
             <div class="date">
                 {{ comment.Date }}
             </div>
-            <div class="name">
+            <div class="bold-name name">
                 {{ comment.Name }}
             </div>
             <div class="comment">
                 {{ comment.Comment }}
             </div>
         </div>
-            <br />
             {% for line_two in comment.Replays.items %}
                 {% for reply in line_two %}
-                    <div class="reply-date">
-                        {{ reply.Date }}
+                    <div class="reply-container">
+                        <div class="date">
+                            {{ reply.Date }}
+                        </div>
+                        <div class="bold-name">
+                            {{ reply.Name }}
+                        </div>
+                        <div class="reply-comment">
+                            {{ reply.Comment }}
+                        </div>
                     </div>
-                    <div class="reply-name">
-                        {{ reply.Name }}
-                    </div>
-                    <div class="reply-comment">
-                        {{ reply.Comment }}
-                    </div>
-    </div>
             {% endfor %}
         {% endfor %}
+    </div>
     {% endfor %}
 {% endfor %}
 
+{% block script %}
+
+<script>
+    $(window).scroll(function() {
+        $('.element-picture').css({'top': String(($(window).scrollTop())/-3) + 'px'});
+    });
+
+    $( window ).ready(function() {
+        $('.comment-container:nth-of-type(2n)').remove();
+    });
+</script>
+{% endblock %}

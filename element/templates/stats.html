@@ -122,10 +122,6 @@
     $( '#barFour' ).css('height', 'calc({{ WaterPercent }}% * 2.2)');
 
 
-    $(window).scroll(function() {
-        $('.element-picture').css({'top': String(($(window).scrollTop())/-3) + 'px'});
-    });
-
     var url = 'http://127.0.0.1:8000/api'
 
     $(document).ready(function() {
