@@ -315,13 +315,13 @@ ul {
   .commentBlock #btn-dark {
     font-size: 25px;
     position: absolute;
-    top: 280px;
+    top: 296px;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 15px;
     letter-spacing: .3px; }
   .commentBlock #text, .commentBlock #name {
-    padding: 6px 10px;
+    padding: 8px 15px;
     border-radius: 5px;
     border: 1px solid #cdcdcd; }
   .commentBlock #text {
@@ -382,13 +382,56 @@ ul {
     margin-bottom: 40px; } }
 #commentBlock {
   margin-bottom: 0;
-  padding: 25px 25px;
-  height: 330px;
-  background: linear-gradient(#f1f1f1 50%, #bebebe);
+  padding: 35px 25px;
+  height: 350px;
+  background: linear-gradient(#f1f1f1 50%, #e4e4e4);
   max-width: 1000px; }
 
 .bold-name {
   font-weight: 900; }
+
+#compareBlock {
+  margin-bottom: 50px;
+  padding: 3px 3px;
+  white-space: nowrap;
+  background: transparent;
+  justify-content: justify;
+  box-shadow: none; }
+  #compareBlock .element_column {
+    display: inline-block;
+    width: 24.5%;
+    text-align: center;
+    padding: 20px 3px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 10px; }
+  #compareBlock .element_column:nth-child(2) {
+    background: red; }
+  #compareBlock .element_column:nth-child(3) {
+    background: green;
+    color: white; }
+  #compareBlock .element_column:nth-child(4) {
+    background: yellow; }
+  #compareBlock .element_column:nth-child(5) {
+    background: blue;
+    color: white; }
+
+#choose-div {
+  position: relative;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: transparent;
+  margin-bottom: 30px; }
+
+#element-compare {
+  position: relative;
+  top: -270px;
+  height: 400px;
+  background: red;
+  z-index: -1; }
 
 #to-fill {
   height: 0px; }
@@ -470,7 +513,8 @@ ul {
   height: 200px;
   width: 200px;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  cursor: pointer; }
   #final-button::before {
     position: absolute;
     top: 50%;
@@ -934,7 +978,15 @@ disappear {
 
 .fa-google-play {
   font-size: calc(30px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: #2e2e2e;
+  margin-bottom: 20px; }
+
+#element-eye {
+  font-size: calc(30px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
   color: #2e2e2e; }
+
+#element-eye:hover {
+  color: #2959ad; }
 
 @keyframes dna-fade {
   0% {

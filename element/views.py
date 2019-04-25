@@ -2,18 +2,18 @@ from django.shortcuts import render
 import requests
 import json
 from . import questions
-from django.http import JsonResponse
-
+from django.http import JsonResponse, HttpResponse
 
 def elements_index(request):
     return render(request, 'elements-index.html')
 
 
-url = 'https://my-element-c1df9.firebaseio.com/.json'
-auth_key = 'MjFhM9ptYix3uDIUemK4hqwDpdw5iyhdpggFZhQy'
 
-url_comment = 'https://my-element-comments.firebaseio.com/'
-auth_comment_key = 'n2NeUhb4zj7tbkHietdv1Qr1LP4F5UbhiFkHku0Z'
+def update_firebase(element):
+    get = requests.get(url + element + '/.json?auth=' + auth_key)
+    update_count = get.json() + 1
+    print(update_count)
+    requests.patch(url + '/.json', json={element: update_count})
 
 
 def explore(request):
@@ -25,11 +25,17 @@ def fire(request):
     get = requests.get(url_comment + 'Fire/Comments/.json?auth=' + auth_comment_key)
     got_comments = get.json()
 
+
     comments = {
         'comments': got_comments,
     }
 
-    return render(request, 'fire.html', comments)
+    if request.method == 'POST':
+        update_firebase('Fire')
+        return HttpResponse('')
+
+    else:
+        return render(request, 'fire.html', )  # comments)
 
 
 def water(request):
@@ -41,7 +47,12 @@ def water(request):
         'comments': got_comments,
     }
 
-    return render(request, 'water.html', comments)
+    if request.method == 'POST':
+        update_firebase('Water')
+        return HttpResponse('')
+
+    else:
+        return render(request, 'water.html', )  # comments)
 
 
 def wind(request):
@@ -53,7 +64,12 @@ def wind(request):
         'comments': got_comments,
     }
 
-    return render(request, 'wind.html', comments)
+    if request.method == 'POST':
+        update_firebase('Wind')
+        return HttpResponse('')
+
+    else:
+        return render(request, 'wind.html', )  # comments)
 
 
 def earth(request):
@@ -65,7 +81,12 @@ def earth(request):
         'comments': got_comments,
     }
 
-    return render(request, 'earth.html', comments)
+    if request.method == 'POST':
+        update_firebase('Earth')
+        return HttpResponse('')
+
+    else:
+        return render(request, 'earth.html', )  # comments)
 
 
 def science(request):
@@ -75,7 +96,7 @@ def science(request):
 def stats(request):
 
     try:
-        get = requests.get(url + '?auth=' + auth_key)
+        get = requests.get(url + '.json?auth=' + auth_key)
         elements = get.json()
         total = elements['Fire'] + elements['Wind'] + elements['Earth'] + elements['Water']
 

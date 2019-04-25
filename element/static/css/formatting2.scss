@@ -366,7 +366,6 @@ disappear {
     width: 46px; height: 46px;
     border-radius: 50%;
     background: lighten(gray,34%);
-
 }
 
 #down-arrow:hover {
@@ -394,6 +393,16 @@ disappear {
 .fa-google-play {
     font-size: calc(30px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     color: lighten(black,18%);
+    margin-bottom: 20px;
+}
+
+#element-eye {
+    font-size: calc(30px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    color: #2e2e2e;
+}
+
+#element-eye:hover {
+    color: #2959ad;
 }
 
 @keyframes dna-fade {

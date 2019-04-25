@@ -127,8 +127,9 @@ $('.submit-buttons').click(function() {
         if (checkForTieBreaker(elementsList) === false) {
             $('.quiz-container-special').fadeOut(1245);
             $('#finished-container').fadeIn(400);
-            var chosenElement = findElement(elements);
+            window.chosenElement = findElement(elements);
             $('#finished-container').append('<a href="' + chosenElement + '" id="final-button" class="btn btn-light"><div><p>Reveal</p><p>Your</p><p>Element</p></div></a>');
+            // $('#finished-container').append('<a id="final-button" class="btn btn-light"><div><p>Reveal</p><p>Your</p><p>Element</p></div></a>');
         }
 
         else {
@@ -137,4 +138,16 @@ $('.submit-buttons').click(function() {
             $('#submit-container2').delay(2500).fadeIn(1500);
         };
     }
+});
+
+$( 'body' ).on('click', '#final-button', function() {
+    var csrftoken = Cookies.get('csrftoken');
+    $.ajax({
+        type: 'POST',
+        url: '/' + String(chosenElement),
+
+        data: {
+            csrfmiddlewaretoken: csrftoken
+        }
+    })
 });

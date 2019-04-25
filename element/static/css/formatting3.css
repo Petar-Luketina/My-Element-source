@@ -98,6 +98,11 @@
 .center {
   text-align: center; }
 
+#emoji {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 20px; }
+
 @media (max-width: 1222px) {
   .writingBlock {
     padding: 50px 45px;

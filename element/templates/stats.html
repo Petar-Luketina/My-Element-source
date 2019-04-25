@@ -121,19 +121,5 @@
     $( '.bar:nth-child(4)' ).css('height', 'calc({{ WaterPercent }}% * 2.2)');
     $( '#barFour' ).css('height', 'calc({{ WaterPercent }}% * 2.2)');
 
-
-    var url = 'http://127.0.0.1:8000/api'
-
-    $(document).ready(function() {
-        var request = new XMLHttpRequest();
-        request.open('GET', url);
-        request.onload = function() {
-            console.log(request.responseText); // Not JSON formatted
-            var data = JSON.parse(request.responseText);
-            console.log(data);
-        }
-        request.send()
-    });
-
 </script>
 {% endblock %}

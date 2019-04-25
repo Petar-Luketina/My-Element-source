@@ -8,15 +8,21 @@
     }
 </style>
 
+<div id="compareBlock" class="commentBlock">
+    <div id="choose-div"><p>Click to read how FIRE</p><p>interacts with each element.</p></div>
+    <div class="element_column">Fire</div>
+    <div class="element_column">Earth</div>
+    <div class="element_column">Wind</div>
+    <div class="element_column">Water</div>
+</div>
 
-
+<div class="commentBlock" id="element-compare"> </div>
 
 <div id="commentBlock" class="commentBlock" >
     <button id="btn-dark" class="btn btn-success"> <span>✏️ </span> ️Comment️</button>
     <input id="name" placeholder="Your nickname">
-    <textarea id="text" placeholder="Your comment"></textarea>
+    <textarea id="text" placeholder="Currently disabled... check back later!"></textarea>
 </div>
-
 
 {% for line in comments.items %}
     {% for comment in line %}
@@ -52,14 +58,13 @@
 {% endfor %}
 
 {% block script %}
+    <script>
+        $(window).scroll(function() {
+            $('.element-picture').css({'top': String(($(window).scrollTop())/-3) + 'px'});
+        });
 
-<script>
-    $(window).scroll(function() {
-        $('.element-picture').css({'top': String(($(window).scrollTop())/-3) + 'px'});
-    });
-
-    $( window ).ready(function() {
-        $('.comment-container:nth-of-type(2n)').remove();
-    });
-</script>
+        $( window ).ready(function() {
+            $('.comment-container:nth-of-type(2n)').remove();
+        });
+    </script>
 {% endblock %}

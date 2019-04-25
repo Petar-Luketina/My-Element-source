@@ -63,8 +63,13 @@ $('.dropdown-elements-menu, #elements').mouseleave(function() {
 });
 
 
+// Emoji Slider
+var emojis = ['😍','😄','😊','😌','😐','😠','😡'];
 
-
+$( "#slider-id" ).mousemove(function(){
+	var i = $(this).val();
+	$( "#emoji" ).html(emojis[i]);
+});
 
 
 
