@@ -36,23 +36,23 @@
         & .bar:nth-child(1) {
             left: 10vw;
             transition-delay: .25s;
-            background: red;
+            background: lighten(red, 10%);
             }
 
         & .bar:nth-child(2) {
             left: 27vw;
             transition-delay: .5s;
-            background: green;
+            background: lighten(green, 10%);
         }
         & .bar:nth-child(3) {
             left: 44vw;
             transition-delay: .75s;
-            background: yellow;
+            background: lighten(yellow, 10%);
         }
         & .bar:nth-child(4) {
             left: 61vw;
             transition-delay: 1s;
-            background: blue;
+            background: lighten(blue, 10%);
         }
 
         & .bar-percent {

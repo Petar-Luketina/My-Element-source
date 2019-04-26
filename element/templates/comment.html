@@ -1,3 +1,5 @@
+{% load static %}
+
 <style>
     .modal-body {
         padding: 25px;
@@ -8,15 +10,26 @@
     }
 </style>
 
-<div id="compareBlock" class="commentBlock">
+<div class="commentBlock" id="element-compare">
     <div id="choose-div"><p>Click to read how FIRE</p><p>interacts with each element.</p></div>
-    <div class="element_column">Fire</div>
-    <div class="element_column">Earth</div>
-    <div class="element_column">Wind</div>
-    <div class="element_column">Water</div>
+    <div class="expanding-circle circleOne"></div>
+    <div class="expanding-circle circleTwo"></div>
+    <div class="commentBlock" id="compareBlock">
+        <div class="element_column">
+            <div class="inside-circle">Fire</div>
+        </div>
+        <div class="element_column">
+            <div class="inside-circle">Earth</div>
+        </div>
+        <div class="element_column">
+            <div class="inside-circle">Wind</div>
+        </div>
+        <div class="element_column">
+            <div class="inside-circle">Water</div>
+        </div>
+    </div>
+    <div id="compare-text"> THis is just a test</div>
 </div>
-
-<div class="commentBlock" id="element-compare"> </div>
 
 <div id="commentBlock" class="commentBlock" >
     <button id="btn-dark" class="btn btn-success"> <span>✏️ </span> ️Comment️</button>
@@ -58,13 +71,5 @@
 {% endfor %}
 
 {% block script %}
-    <script>
-        $(window).scroll(function() {
-            $('.element-picture').css({'top': String(($(window).scrollTop())/-3) + 'px'});
-        });
-
-        $( window ).ready(function() {
-            $('.comment-container:nth-of-type(2n)').remove();
-        });
-    </script>
+    <script src = '{% static "java/comment.js" %}'></script>
 {% endblock %}

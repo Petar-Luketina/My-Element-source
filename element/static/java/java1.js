@@ -88,6 +88,3 @@ $( "#slider-id" ).mousemove(function(){
 
 
 
-
-
-

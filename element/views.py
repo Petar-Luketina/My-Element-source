@@ -1,12 +1,13 @@
 from django.shortcuts import render
 import requests
 import json
-from . import questions
+from . import questions, comparisons
 from django.http import JsonResponse, HttpResponse
+
+
 
 def elements_index(request):
     return render(request, 'elements-index.html')
-
 
 
 def update_firebase(element):
@@ -26,8 +27,9 @@ def fire(request):
     got_comments = get.json()
 
 
-    comments = {
-        'comments': got_comments,
+    context = {
+        # 'comments': got_comments,
+        'comparisons': fire_comparisons,
     }
 
     if request.method == 'POST':
@@ -35,7 +37,7 @@ def fire(request):
         return HttpResponse('')
 
     else:
-        return render(request, 'fire.html', )  # comments)
+        return render(request, 'fire.html', context)
 
 
 def water(request):
@@ -43,8 +45,9 @@ def water(request):
     get = requests.get(url_comment + 'Water/Comments/.json?auth=' + auth_comment_key)
     got_comments = get.json()
 
-    comments = {
-        'comments': got_comments,
+    context = {
+        # 'comments': got_comments,
+        'comparisons': water_comparisons,
     }
 
     if request.method == 'POST':
@@ -52,7 +55,7 @@ def water(request):
         return HttpResponse('')
 
     else:
-        return render(request, 'water.html', )  # comments)
+        return render(request, 'water.html', context)
 
 
 def wind(request):
@@ -60,8 +63,9 @@ def wind(request):
     get = requests.get(url_comment + 'Wind/Comments/.json?auth=' + auth_comment_key)
     got_comments = get.json()
 
-    comments = {
-        'comments': got_comments,
+    context = {
+        # 'comments': got_comments,
+        'comparisons': wind_comparisons,
     }
 
     if request.method == 'POST':
@@ -69,7 +73,7 @@ def wind(request):
         return HttpResponse('')
 
     else:
-        return render(request, 'wind.html', )  # comments)
+        return render(request, 'wind.html', context)
 
 
 def earth(request):
@@ -77,8 +81,9 @@ def earth(request):
     get = requests.get(url_comment + 'Earth/Comments/.json?auth=' + auth_comment_key)
     got_comments = get.json()
 
-    comments = {
-        'comments': got_comments,
+    context = {
+        # 'comments': got_comments,
+        'comparisons': earth_comparisons,
     }
 
     if request.method == 'POST':
@@ -86,7 +91,7 @@ def earth(request):
         return HttpResponse('')
 
     else:
-        return render(request, 'earth.html', )  # comments)
+        return render(request, 'earth.html', context)
 
 
 def science(request):
