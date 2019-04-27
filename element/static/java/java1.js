@@ -43,11 +43,14 @@ var target = $('#space')
 
 $('#down-arrow').click(function(e){
     e.preventDefault();
+    $( '#dna' ).animate({
+        opacity: '1',
+    },1000);
     opacityFunction('#firstBlock',0);
     opacityFunction(target,.05);
     setTimeout("opacityFunction(target,1)", 3100);
     $('html, body').stop().animate({
-        scrollTop: target.offset().top
+        scrollTop: target.offset().top - 90
     }, 5000);
     setTimeout("opacityFunction('#firstBlock',1)", 6000);
 })

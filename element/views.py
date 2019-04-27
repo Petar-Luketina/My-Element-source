@@ -5,7 +5,6 @@ from . import questions, comparisons
 from django.http import JsonResponse, HttpResponse
 
 
-
 def elements_index(request):
     return render(request, 'elements-index.html')
 
@@ -13,7 +12,6 @@ def elements_index(request):
 def update_firebase(element):
     get = requests.get(url + element + '/.json?auth=' + auth_key)
     update_count = get.json() + 1
-    print(update_count)
     requests.patch(url + '/.json', json={element: update_count})
 
 
@@ -29,7 +27,7 @@ def fire(request):
 
     context = {
         # 'comments': got_comments,
-        'comparisons': fire_comparisons,
+        'comparisons': comparisons.fire_comparisons,
     }
 
     if request.method == 'POST':
@@ -47,7 +45,7 @@ def water(request):
 
     context = {
         # 'comments': got_comments,
-        'comparisons': water_comparisons,
+        'comparisons': comparisons.water_comparisons,
     }
 
     if request.method == 'POST':
@@ -65,7 +63,7 @@ def wind(request):
 
     context = {
         # 'comments': got_comments,
-        'comparisons': wind_comparisons,
+        'comparisons': comparisons.wind_comparisons,
     }
 
     if request.method == 'POST':
@@ -83,7 +81,7 @@ def earth(request):
 
     context = {
         # 'comments': got_comments,
-        'comparisons': earth_comparisons,
+        'comparisons': comparisons.earth_comparisons,
     }
 
     if request.method == 'POST':

@@ -381,10 +381,10 @@ ul {
     font-size: 14px;
     margin-bottom: 40px; } }
 #commentBlock {
-  margin-top: 0;
+  margin-top: -50px;
   padding: 35px 25px;
   height: 350px;
-  background: linear-gradient(#f1f1f1 50%, #e4e4e4);
+  background: #f1f1f1;
   max-width: 1000px; }
 
 .bold-name {
@@ -407,7 +407,8 @@ ul {
     border-radius: 50%;
     color: white;
     background: #141414;
-    z-index: 2; }
+    z-index: 2;
+    position: relative; }
     #compareBlock .element_column .inside-circle {
       top: 50%;
       transform: translateY(-50%);
@@ -423,7 +424,22 @@ ul {
   #compareBlock .element_column:hover .inside-circle {
     letter-spacing: 2px;
     font-weight: 900; }
+  @media (max-width: 768px) {
+    #compareBlock .element_column {
+      width: 25%;
+      left: -5%; } }
+  @media (max-width: 425px) {
+    #compareBlock .element_column {
+      width: 30%;
+      left: -18%; } }
+  @media (max-width: 320px) {
+    #compareBlock .element_column {
+      width: 35%;
+      left: -29.5%; } }
 
+@media (max-width: 768px) {
+  #compareBlock {
+    margin-bottom: 0; } }
 #choose-div {
   color: white;
   padding: 20px 0;
@@ -443,21 +459,14 @@ ul {
 #compare-text {
   position: relative;
   top: -100px;
-  height: 400px;
+  height: auto;
   width: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  margin-bottom: -50px;
+  line-height: 1.5em;
+  margin-bottom: -90px;
   border-radius: 10px;
-  z-index: 2; }
-
-.expanding-circle {
-  background: white;
-  width: 200px;
-  height: 200px;
-  margin: -60px;
-  position: absolute;
-  border-radius: 0 0 10px 0;
-  top: -200px; }
+  z-index: 2;
+  color: black;
+  padding: 0px; }
 
 #to-fill {
   height: 0px; }

@@ -11,9 +11,7 @@
 </style>
 
 <div class="commentBlock" id="element-compare">
-    <div id="choose-div"><p>Click to read how FIRE</p><p>interacts with each element.</p></div>
-    <div class="expanding-circle circleOne"></div>
-    <div class="expanding-circle circleTwo"></div>
+    <div id="choose-div"><p>Click to read how {{  comparisons.Element }} elements</p><p>interacts with each element.</p></div>
     <div class="commentBlock" id="compareBlock">
         <div class="element_column">
             <div class="inside-circle">Fire</div>
@@ -28,7 +26,7 @@
             <div class="inside-circle">Water</div>
         </div>
     </div>
-    <div id="compare-text"> THis is just a test</div>
+    <div id="compare-text"></div>
 </div>
 
 <div id="commentBlock" class="commentBlock" >
@@ -72,4 +70,17 @@
 
 {% block script %}
     <script src = '{% static "java/comment.js" %}'></script>
+
+    <script>
+        var comparingElements = [
+                                    " {{ comparisons.Fire }}  ",
+                                    " {{ comparisons.Earth }} ",
+                                    " {{ comparisons.Wind }} ",
+                                    " {{ comparisons.Water }} ",
+                                ]
+        $( '.element_column' ).click(function() {
+            $( '#compare-text' ).html( comparingElements[$( this ).index()] );
+        });
+    </script>
+
 {% endblock %}

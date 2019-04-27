@@ -3,11 +3,12 @@
   transition: .25s;
   position: fixed;
   border-radius: 50%;
+  z-index: 4;
 }
 
 #share {
   @include round-button;
-  z-index: 3;
+  z-index: 5;
   background: white;
   bottom: 30px;
   right: 30px;
@@ -16,6 +17,11 @@
   width: 50px;
   font-size: 30px;
   box-shadow: 0 7px 25px -10px black;
+
+  * {
+      z-index: 5;
+  }
+
 }
 
 #share:hover {
@@ -34,7 +40,7 @@
   width: 40px;
   font-size: 28px;
   box-shadow: 0 10px 25px -10px;
-  z-index: 2;
+  z-index: 4;
 }
 
 .sm-social:hover {
@@ -44,6 +50,7 @@
 .sm-icon {
   top: -1px;
   color: white;
+  z-index: 4;
 }
 
 #fb {
@@ -66,6 +73,7 @@
 
 .fa-close {
   left: 1px;
+  z-index: 4;
 }
 
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
