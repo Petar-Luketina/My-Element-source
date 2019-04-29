@@ -4,7 +4,7 @@ $(window).scroll(function() {
 
 
 $( window ).ready(function() {
-    $('.comment-container:nth-of-type(2n)').remove();
+    $('.c-c:nth-child(even)').remove();
 });
 
 
@@ -25,3 +25,5 @@ $( '.element_column' ).click(function() {
     $( '#choose-div' ).children().css({ color: 'black' });
 
 });
+
+

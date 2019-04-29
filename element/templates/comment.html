@@ -35,42 +35,41 @@
     <textarea id="text" placeholder="Currently disabled... check back later!"></textarea>
 </div>
 
-{% for line in comments.items %}
-    {% for comment in line %}
-    <div class="comment-container">
-        <div class="comment">
-            <div class="date">
-                {{ comment.Date }}
-            </div>
-            <div class="bold-name name">
-                {{ comment.Name }}
-            </div>
-            <div class="comment">
-                {{ comment.Comment }}
-            </div>
-        </div>
-            {% for line_two in comment.Replays.items %}
-                {% for reply in line_two %}
-                    <div class="reply-container">
-                        <div class="date">
-                            {{ reply.Date }}
-                        </div>
-                        <div class="bold-name">
-                            {{ reply.Name }}
-                        </div>
-                        <div class="reply-comment">
-                            {{ reply.Comment }}
-                        </div>
+    {% for line in comments.items %}
+        {% for comment in line %}
+            <div class="c-c">
+                <div class="comment">
+                    <div class="date">
+                        {{ comment.Date }}
                     </div>
-            {% endfor %}
+                    <div class="bold-name name">
+                        {{ comment.Name }}
+                    </div>
+                    <div class="comment">
+                        {{ comment.Comment }}
+                    </div>
+                </div>
+                    {% for line_two in comment.Replays.items %}
+                        {% for reply in line_two %}
+                            <div class="reply-container">
+                                <div class="date">
+                                    {{ reply.Date }}
+                                </div>
+                                <div class="bold-name">
+                                    {{ reply.Name }}
+                                </div>
+                                <div class="reply-comment">
+                                    {{ reply.Comment }}
+                                </div>
+                            </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
         {% endfor %}
-    </div>
     {% endfor %}
-{% endfor %}
-
+    <div style="height: 20vh"></div>
 {% block script %}
     <script src = '{% static "java/comment.js" %}'></script>
-
     <script>
         var comparingElements = [
                                     " {{ comparisons.Fire }}  ",
@@ -81,6 +80,47 @@
         $( '.element_column' ).click(function() {
             $( '#compare-text' ).html( comparingElements[$( this ).index()] );
         });
-    </script>
 
+
+        $( '#btn-dark' ).click(function() {
+            if ($( '#name' ).val().length < 1 || $( '#text' ).val().length < 1) {
+                if ($( '#name' ).val().length < 1 ) {
+                    $( '#name' ).css({ border: '1px dotted red' });
+                }
+                else {
+                    $( '#name' ).css({ border: 'none' });
+                }
+
+                if ($( '#text' ).val().length < 1) {
+                    $( '#text' ).css({ border: '1px dotted red' });
+                }
+                else {
+                    $( '#text' ).css({ border: 'none' });
+                }
+            }
+
+            else {
+                var csrftoken = Cookies.get('csrftoken');
+                $.ajax({
+                    type: 'POST',
+                    url: '/' + '{{ comparisons.Element }}'.toLowerCase(),
+
+                    data: {
+                        csrfmiddlewaretoken: csrftoken,
+                        'name': $( '#name' ).val(),
+                        'comment': $( '#text' ).val(),
+                        'time': '{% now "jS F Y" %}',
+                    }
+                })
+
+                $( 'html, body' ).stop().animate({
+                    scrollTop: $(document).height()
+                }, 900);
+
+                setTimeout(function() {
+                    location.reload(true);
+                }, 1000)
+            }
+        });
+    </script>
 {% endblock %}

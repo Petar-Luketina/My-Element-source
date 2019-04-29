@@ -94,7 +94,8 @@
   -moz-transition: 3s;
   -webkit-transition: 3s;
   transition: 3s;
-  margin-top: 300px; }
+  margin-top: 300px;
+  animation: dna-fade 1s; }
 
 .center {
   text-align: center; }

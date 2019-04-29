@@ -24,15 +24,27 @@ def fire(request):
     get = requests.get(url_comment + 'Fire/Comments/.json?auth=' + auth_comment_key)
     got_comments = get.json()
 
-
     context = {
-        # 'comments': got_comments,
+        'comments': got_comments,
         'comparisons': comparisons.fire_comparisons,
     }
 
     if request.method == 'POST':
-        update_firebase('Fire')
-        return HttpResponse('')
+
+        # from AJAX on the comment.html page
+
+        if request.POST.get('name', None):
+            post = {
+                    'Name': request.POST.get('name', None),
+                    'Date': request.POST.get('time', None),
+                    'Comment': request.POST.get('comment', None),
+                }
+            requests.post(url_comment + 'Fire/Comments/.json', json=post)
+            return HttpResponse('')
+
+        else:
+            update_firebase('Fire')
+            return HttpResponse('')
 
     else:
         return render(request, 'fire.html', context)
@@ -44,13 +56,24 @@ def water(request):
     got_comments = get.json()
 
     context = {
-        # 'comments': got_comments,
+        'comments': got_comments,
         'comparisons': comparisons.water_comparisons,
     }
 
     if request.method == 'POST':
-        update_firebase('Water')
-        return HttpResponse('')
+
+        if request.POST.get('name', None):
+            post = {
+                    'Name': request.POST.get('name', None),
+                    'Date': request.POST.get('time', None),
+                    'Comment': request.POST.get('comment', None),
+                }
+            requests.post(url_comment + 'Water/Comments/.json', json=post)
+            return HttpResponse('')
+
+        else:
+            update_firebase('Water')
+            return HttpResponse('')
 
     else:
         return render(request, 'water.html', context)
@@ -62,13 +85,24 @@ def wind(request):
     got_comments = get.json()
 
     context = {
-        # 'comments': got_comments,
+        'comments': got_comments,
         'comparisons': comparisons.wind_comparisons,
     }
 
     if request.method == 'POST':
-        update_firebase('Wind')
-        return HttpResponse('')
+
+        if request.POST.get('name', None):
+            post = {
+                    'Name': request.POST.get('name', None),
+                    'Date': request.POST.get('time', None),
+                    'Comment': request.POST.get('comment', None),
+                }
+            requests.post(url_comment + 'Wind/Comments/.json', json=post)
+            return HttpResponse('')
+
+        else:
+            update_firebase('Wind')
+            return HttpResponse('')
 
     else:
         return render(request, 'wind.html', context)
@@ -80,13 +114,24 @@ def earth(request):
     got_comments = get.json()
 
     context = {
-        # 'comments': got_comments,
+        'comments': got_comments,
         'comparisons': comparisons.earth_comparisons,
     }
 
     if request.method == 'POST':
-        update_firebase('Earth')
-        return HttpResponse('')
+
+        if request.POST.get('name', None):
+            post = {
+                    'Name': request.POST.get('name', None),
+                    'Date': request.POST.get('time', None),
+                    'Comment': request.POST.get('comment', None),
+                }
+            requests.post(url_comment + 'Earth/Comments/.json', json=post)
+            return HttpResponse('')
+
+        else:
+            update_firebase('Earth')
+            return HttpResponse('')
 
     else:
         return render(request, 'earth.html', context)

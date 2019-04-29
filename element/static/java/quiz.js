@@ -143,6 +143,7 @@ $('.submit-buttons').click(function() {
 $( 'body' ).on('click', '#final-button', function() {
     var csrftoken = Cookies.get('csrftoken');
     $.ajax({
+        synch: 'true',
         type: 'POST',
         url: '/' + String(chosenElement),
 
